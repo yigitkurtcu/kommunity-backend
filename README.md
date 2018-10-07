@@ -1,7 +1,7 @@
 # Setup
 
-# npm install
-# npm install -g nodemon
+$ npm install
+$ npm install -g nodemon
 
 ## Setup mysql
 ..
