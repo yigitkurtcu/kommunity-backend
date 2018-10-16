@@ -14,7 +14,7 @@ router.post('/login', (req, res, next) => {
     }
 
     if (!user) {
-      return res.status(401).send({ error: 'unauthorized' }).end();
+      return res.status(401).send({ code: 'unauthorized' }).end();
     }
 
     return req.logIn(user, (loginError) => {
@@ -27,7 +27,7 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   req.logout();
   res.status(200).send({ success: true });
 });

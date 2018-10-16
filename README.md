@@ -12,16 +12,22 @@ $ npm install -g nodemon
 ..
 
 
-- install NVM (node version manager):
-Mac: https://github.com/creationix/nvm/blob/master/README.md#installation
+## install NVM (node version manager):
 Windows: https://github.com/coreybutler/nvm-windows/releases
+Mac: https://github.com/creationix/nvm/blob/master/README.md#installation
 
 - nvm install 8.11.4
 - nvm use 8.11.4
 
+### Fix NVM
 
+Windows? do:
+- open node_modules/pre-push/index.js
+- find `if (!this.npm)`
+- right after if block, put:
+`this.npm += ".cmd";`
 
-- install mysql
+## install mysql
 Mac: Sequel pro, mysql workbench
 Windows: Mysql Work bench -- https://dev.mysql.com/downloads/workbench/
 

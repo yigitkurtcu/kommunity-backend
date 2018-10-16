@@ -17,7 +17,7 @@ export const initializePassport = (app) => {
       return next();
     }
 
-    return res.status(401).send({ error: 'unauthorized' }).end();
+    return res.status(401).send({ code: 'unauthorized' }).end();
   });
 
   passport.use(new LocalStrategy(
