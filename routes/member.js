@@ -4,7 +4,7 @@ import passport from 'passport';
 const router = express.Router();
 
 router.get('/me', (req, res) => {
-  return res.status(200).send(req.user);
+  return res.json(req.user);
 });
 
 router.post('/login', (req, res, next) => {
@@ -14,7 +14,7 @@ router.post('/login', (req, res, next) => {
     }
 
     if (!user) {
-      return res.status(401).send({ code: 'unauthorized' }).end();
+      return res.status(401).json({ code: 'unauthorized' });
     }
 
     return req.logIn(user, (loginError) => {
@@ -22,14 +22,14 @@ router.post('/login', (req, res, next) => {
         return next(loginError);
       }
 
-      return res.status(200).send({ user }).end();
+      return res.json({ user });
     });
   })(req, res, next);
 });
 
 router.post('/logout', (req, res) => {
   req.logout();
-  res.status(200).send({ success: true });
+  res.json({ success: true });
 });
 
 module.exports = router;
