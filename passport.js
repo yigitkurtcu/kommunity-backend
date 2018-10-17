@@ -7,7 +7,7 @@ const UNAUTH_URLS = [
   '/member/login',
 ];
 
-export const initializePassport = (app) => {
+export const initializePassport = (app:any) => {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use((req, res, next) => {
