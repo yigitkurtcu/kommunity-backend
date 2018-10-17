@@ -30,4 +30,3 @@ declare module 'express-session' {
 declare module 'morgan' {
   declare module.exports: any;
 }
-
