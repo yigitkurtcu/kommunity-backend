@@ -10,7 +10,8 @@
     "test": "./node_modules/.bin/eslint --fix .",
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
     "check-travis": "run-s -nl lint",
-    "flow": "flow"
+    "flow": "flow",
+    "import-db" : "node scripts/db/import-db.js"
   },
   "pre-push": [
     "check-if-not-committed",
