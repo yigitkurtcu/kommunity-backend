@@ -4,14 +4,13 @@ const sqlScriptFileName = 'kommunity.app.db.' + dbVer + '.sql';
 exec('mysql -u root -p < scripts\\db\\' + dbVer + '\\' + sqlScriptFileName, (err, stdout, stderr) => {
     var resultMessage;
     if (err) {
-        console.error(err.message);
-        resultMessage = 'Import failed. (' + sqlScriptFileName + ')';
+        resultMessage = 'Import failed. (' + sqlScriptFileName + ')\n\n!!!!! => ' + err.message + '\n\n';
     } else if(stderr) {
-        console.log(stderr);
-        resultMessage = 'Import completed. (' + sqlScriptFileName + ')';
+        resultMessage = 'Import completed. (' + sqlScriptFileName + ')\n\n' + stderr + '\n\n';
     } else if(stdout) {
-        console.log(stdout);
-        resultMessage= 'Import completed. (' + sqlScriptFileName + ')';
+        resultMessage= 'Import completed. (' + sqlScriptFileName + ')\n\n' + stdout + '\n\n';
     }
+    /* eslint-disable no-console */
     console.log(resultMessage)
+    /* eslint-enable no-console */
 });
