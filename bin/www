@@ -1,9 +1,18 @@
 #!/usr/bin/env node
-
+// @flow
+import { AppSettings, getAppConfig } from '../config/config.js';
 /**
  * Module dependencies.
  */
 
+if (!process.env.NODE_ENV) {
+  throw new Error('NODE_ENV not set or invalid. (expected local, test, staging or production)');
+}
+/* eslint-disable no-console */
+console.log(`Application started with ${process.env.NODE_ENV} (NODE_ENV=${process.env.NODE_ENV}) config. `)
+/* eslint-enable no-console */
+
+var config: AppSettings = getAppConfig();
 var app = require('../server');
 var debug = require('debug')('community:server');
 var http = require('http');
@@ -12,7 +21,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3008');
+var port = normalizePort(config.appServer.port);
 app.set('port', port);
 
 /**
