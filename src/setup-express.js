@@ -5,12 +5,14 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressSession from 'express-session';
-import tokenAuth from './middlewares/tokenAuth';
+import tokenAuth from './middlewares/jwt';
+import config from './config';
 
 export const initializeExpressApp = () => {
   const app = express();
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'hbs');
+  app.set('superSecret',config.secret);
 
   app.use(cors());
   app.use(logger('dev'));
@@ -29,8 +31,6 @@ export const initializeExpressApp = () => {
   }));
 
   app.use(tokenAuth.tokenControl);
-
-  app.listen(5959);
 
   return app;
 };

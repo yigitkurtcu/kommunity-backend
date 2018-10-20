@@ -14,6 +14,7 @@ router.post('/login', (req, res, next) => {
       return next(err);
     }
 
+
     if (!user) {
       return res.status(401).json({ code: 'unauthorized' });
     }
@@ -23,9 +24,7 @@ router.post('/login', (req, res, next) => {
         return next(loginError);
       }
 
-      let token = jwt.sign(user, app.get('superSecret'), {
-        expiresInMinutes: 1440 // expires in 24 hours
-      });
+      let token = jwt.sign({ user: user }, app.get('superSecret'),{ expiresIn: '7 days' });
 
       return res.json({ user,token });
     });
