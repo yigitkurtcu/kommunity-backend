@@ -1,5 +1,8 @@
 import express from 'express';
 import passport from 'passport';
+import config from '../config';
+
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
@@ -13,6 +16,7 @@ router.post('/login', (req, res, next) => {
       return next(err);
     }
 
+
     if (!user) {
       return res.status(401).json({ code: 'unauthorized' });
     }
@@ -22,7 +26,9 @@ router.post('/login', (req, res, next) => {
         return next(loginError);
       }
 
-      return res.json({ user });
+      const token = jwt.sign({ user }, config.secret, { expiresIn: '7 days' });
+
+      return res.json({ user, token });
     });
   })(req, res, next);
 });
