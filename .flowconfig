@@ -1,5 +1,7 @@
 [ignore]
 .*/node_modules/.*
+.*/test/.*
+.*/scripts/.*
 
 [include]
 
@@ -7,8 +9,14 @@
 flow-typed
 
 [lints]
+all=warn
 
 [options]
 all=true
 
 [strict]
+nonstrict-import
+unclear-type
+unsafe-getters-setters
+untyped-import
+untyped-type-import

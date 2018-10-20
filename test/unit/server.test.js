@@ -30,6 +30,6 @@ test('server - /health returns OK', (done) => {
   });
 });
 
-afterAll(() => {
-  server.close();
+afterAll((done) => {
+  server.close(done);
 });

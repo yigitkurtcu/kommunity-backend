@@ -1,22 +1,22 @@
 import memberRouter from './member';
 
-export const initializeRoutes = (app:any) => {
+export const initializeRoutes = (app: express$Application) => {
   app.use('/member', memberRouter);
-  app.get('/health', (req, res) => {
+  app.get('/health', (req: express$Request, res: express$Response) => {
     res.end('OK');
   });
 };
 
-export const initializeErrorRoutes = (app:any) => {
-  app.use((req:any, res:any) => res.status(404).send());
+export const initializeErrorRoutes = (app: express$Application) => {
+  app.use((req: express$Request, res: express$Response) => res.status(404).send());
 
   // error handler
-  app.use((err:any, req:any, res:any) => {
+  app.use((err: Error, req: express$Request, res: express$Response) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
 
     // render the error page
-    return res.status(err.status || 500).send(err);
+    return res.status(500).send(err);
   });
 };

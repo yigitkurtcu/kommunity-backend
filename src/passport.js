@@ -8,10 +8,10 @@ const UNAUTH_URLS = [
   '/member/login',
 ];
 
-export const initializePassport = (app:any) => {
+export const initializePassport = (app: express$Application) => {
   app.use(passport.initialize());
   app.use(passport.session());
-  app.use((req, res, next) => {
+  app.use((req: express$Request, res: express$Response, next: express$NextFunction) => {
     if (UNAUTH_URLS.indexOf(req.path) > -1) {
       return next();
     } if (req.isAuthenticated()) {

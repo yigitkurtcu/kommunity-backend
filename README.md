@@ -34,3 +34,7 @@ Windows: Mysql Work bench -- https://dev.mysql.com/downloads/workbench/
 
 - npm i -g babel-cli
 
+## Adding new flow type definition
+In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed. 
+
+`npm run flow-typed-add express@4`

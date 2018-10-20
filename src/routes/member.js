@@ -3,11 +3,11 @@ import passport from 'passport';
 
 const router = express.Router();
 
-router.get('/me', (req, res) => {
+router.get('/me', (req: express$Request, res: express$Response) => {
   return res.json(req.user);
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', (req: express$RenderCallback, res: express$Response, next: express$NextFunction) => {
   passport.authenticate('local', (err, user /* , info */) => {
     if (err) {
       return next(err);
@@ -27,7 +27,7 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.post('/logout', (req, res) => {
+router.post('/logout', (req: express$Request, res: express$Response) => {
   req.logout();
   res.json({ success: true });
 });
