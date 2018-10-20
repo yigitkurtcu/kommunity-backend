@@ -7,5 +7,14 @@
       "import/no-unresolved": 0,
       "import/prefer-default-export": 0,
       "arrow-body-style": 0
+    },
+    "globals": {
+      "describe": true,
+      "test": true,
+      "expect": true,
+      "beforeAll": true, 
+      "beforeEach": true, 
+      "afterAll": true, 
+      "afterEach": true
     }
 }
