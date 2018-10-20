@@ -12,7 +12,7 @@ export const initializeExpressApp = () => {
   const app = express();
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'hbs');
-  app.set('superSecret',config.secret);
+  app.set('superSecret', config.secret);
 
   app.use(cors());
   app.use(logger('dev'));

@@ -1,11 +1,10 @@
 import memberRouter from './member';
-const jwt = require('jsonwebtoken');
 
 export const initializeRoutes = (app:any) => {
   app.use('/member', memberRouter);
   app.get('/health', (req, res) => {
     res.end('OK');
-  }); 
+  });
 };
 
 export const initializeErrorRoutes = (app:any) => {
