@@ -5,18 +5,20 @@
   "scripts": {
     "start": "nodemon ./bin/www --exec babel-node",
     "watch": "npm start",
-    "lint": "./node_modules/.bin/eslint src/ test/",
-    "fix-lint": "./node_modules/.bin/eslint --fix src/ test/",
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
-    "check-travis": "run-s -nl lint test",
+    "check-travis": "run-s -nl lint flow test",
+    "test": "jest"
+
+    "lint": "./node_modules/.bin/eslint src/ test/",
+    "lint-fix": "./node_modules/.bin/eslint --fix src/ test/",
     "flow": "flow check --include-warnings",
     "flow-coverage": "flow coverage --color",
-    "flow-typed-add": "flow-typed install",
-    "test": "jest"
+    "flow-typed-add": "flow-typed install"
   },
   "pre-push": [
     "check-if-not-committed",
     "lint",
+		"flow",
     "test"
   ],
   "dependencies": {
