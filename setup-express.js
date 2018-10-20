@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressSession from 'express-session';
+import tokenAuth from './middlewares/tokenAuth';
 
 export const initializeExpressApp = () => {
   const app = express();
@@ -26,6 +27,10 @@ export const initializeExpressApp = () => {
     resave: true,
     saveUninitialized: true,
   }));
+
+  app.use(tokenAuth.tokenControl);
+
+  app.listen(5959);
 
   return app;
 };

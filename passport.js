@@ -18,6 +18,7 @@ export const initializePassport = (app:any) => {
     }
 
     return res.status(401).send({ code: 'unauthorized' }).end();
+
   });
 
   passport.use(new LocalStrategy(
@@ -30,9 +31,9 @@ export const initializePassport = (app:any) => {
       }).then((user) => {
         if (!user) {
           return done(null, false);
-        }
+         }
 
-        return done(null, lodash.pick(user, ['uuid', 'username', 'firstname', 'lastname']));
+        return done(null, lodash.pick(user, ['uuid', 'username', 'firstname', 'lastname','token']));
       });
     }),
   ));
