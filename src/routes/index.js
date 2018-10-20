@@ -2,6 +2,9 @@ import memberRouter from './member';
 
 export const initializeRoutes = (app:any) => {
   app.use('/member', memberRouter);
+  app.get('/health', (req, res) => {
+    res.end('OK');
+  });
 };
 
 export const initializeErrorRoutes = (app:any) => {
