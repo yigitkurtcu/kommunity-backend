@@ -54,7 +54,16 @@ $ git checkout -b BRANCH_NAME
 
 # Make changes in the code base ...
 
-# Add updated files to staging 
+# Check for formatting
+$ npm run lint
+
+# Check for flow types
+$ npm run flow
+
+# Run unit tests
+$ npm run test
+
+# If all checks (lint, flow, test) are passing, add updated files to staging 
 $ git add src/server.js
 
 # Commit your changes
