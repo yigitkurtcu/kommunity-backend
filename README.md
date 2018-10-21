@@ -75,7 +75,7 @@ $ git push -u my-fork BRANCH_NAME
 # Go to github, open your forked repository page
 # Click on `New pull request` button
 # Make sure you see base: dev, and original repo name on the left
-#   And BRANCH_NAME, and your fork's name on the right. o
+#   And BRANCH_NAME, and your fork's name on the right. 
 # Hit `Create pull request` button
 
 # Once PR is created, make sure Travis build passes. Then ask other developers to review your code.
