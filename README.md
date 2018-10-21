@@ -78,4 +78,4 @@ $ git push -u my-fork BRANCH_NAME
 #   And BRANCH_NAME, and your fork's name on the right. o
 # Hit `Create pull request` button
 
-# Ask other developers to review your code.
+# Once PR is created, make sure Travis build passes. Then ask other developers to review your code.
