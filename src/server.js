@@ -3,8 +3,12 @@
 const http = require('http');
 const app = require('./app');
 
+const getPort = () => {
+  return process.env.PORT !== null && process.env.PORT !== undefined ? process.env.PORT : '3008';
+};
+
 export const startServer = () => {
-  const port = process.env.PORT || '3008';
+  const port = getPort();
   app.set('port', port);
 
   const server = http.createServer(app);
