@@ -1,37 +1,22 @@
 import express from 'express';
 import passport from 'passport';
-import config from '../config';
-
-const jwt = require('jsonwebtoken');
+import { generateTokenForUser } from '../lib/token';
 
 const router = express.Router();
 
-router.get('/me', (req: express$Request, res: express$Response) => {
+router.get('/me', passport.authenticate('jwt', { session: false }), (req: express$Request, res: express$Response) => {
   return res.json(req.user);
 });
 
-router.post('/login', (req: express$RenderCallback, res: express$Response, next: express$NextFunction) => {
-  passport.authenticate('local', (err, user /* , info */) => {
-    if (err) {
-      return next(err);
-    }
-
-
-    if (!user) {
-      return res.status(401).json({ code: 'unauthorized' });
-    }
-
-    return req.logIn(user, (loginError) => {
-      if (loginError) {
-        return next(loginError);
-      }
-
-      const token = jwt.sign({ user }, config.secret, { expiresIn: '7 days' });
-
-      return res.json({ user, token });
+router.post('/login',
+  passport.authenticate('local', { session: false }),
+  (req: express$RenderCallback, res: express$Response) => {
+    const { user } = req;
+    return res.json({
+      user,
+      token: generateTokenForUser(user),
     });
-  })(req, res, next);
-});
+  });
 
 router.post('/logout', (req: express$Request, res: express$Response) => {
   req.logout();

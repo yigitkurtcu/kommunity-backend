@@ -4,16 +4,13 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-import expressSession from 'express-session';
-import tokenAuth from './middlewares/jwt';
-import config from './config';
 
 export const initializeExpressApp = () => {
   const app = express();
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'hbs');
-  app.set('superSecret', config.secret);
 
+  // TODO update cors policy
   app.use(cors());
   app.use(logger('dev'));
   app.use(express.json());
@@ -23,14 +20,6 @@ export const initializeExpressApp = () => {
 
   app.use(bodyParser.urlencoded());
   app.use(bodyParser.json());
-
-  app.use(expressSession({
-    secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true,
-  }));
-
-  app.use(tokenAuth.tokenControl);
 
   return app;
 };

@@ -8,7 +8,7 @@ beforeAll(() => {
 });
 
 test('server returns 401', (done) => {
-  http.get('http://localhost:3008', (res) => {
+  http.get('http://localhost:3008/member/me', (res) => {
     expect(res.statusCode).toBe(401);
     done();
   });

@@ -37,3 +37,11 @@ declare module 'morgan' {
 declare module 'cors' {
   declare module.exports: any;
 }
+
+declare module 'jsonwebtoken' {
+  declare module.exports: any;
+}
+
+declare module 'passport-strategy' {
+  declare module.exports: any;
+}

@@ -8,7 +8,6 @@
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
     "check-travis": "run-s -nl lint flow test",
     "test": "jest",
-
     "lint": "./node_modules/.bin/eslint src/ test/",
     "lint-fix": "./node_modules/.bin/eslint --fix src/ test/",
     "flow": "flow check --include-warnings",
@@ -18,7 +17,7 @@
   "pre-push": [
     "check-if-not-committed",
     "lint",
-		"flow",
+    "flow",
     "test"
   ],
   "dependencies": {
@@ -36,6 +35,7 @@
     "passport": "^0.4.0",
     "passport-cookie": "^1.0.6",
     "passport-local": "^1.0.0",
+    "passport-strategy": "^1.0.0",
     "sequelize": "^4.39.0"
   },
   "devDependencies": {
