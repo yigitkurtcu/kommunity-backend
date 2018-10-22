@@ -7,7 +7,8 @@ const app = require('./app');
 export const startServer = () => {
   const config = getAppConfig();
   const { port } = config.appServer;
-  app.set('port', port);
+  // TODO remove 3008 here, add NODE_ENV to npm script
+  app.set('port', port || 3008);
 
   const server = http.createServer(app);
 
