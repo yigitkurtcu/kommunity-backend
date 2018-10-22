@@ -54,7 +54,16 @@ $ git checkout -b BRANCH_NAME
 
 # Make changes in the code base ...
 
-# Add updated files to staging 
+# Check for formatting
+$ npm run lint
+
+# Check for flow types
+$ npm run flow
+
+# Run unit tests
+$ npm run test
+
+# If all checks (lint, flow, test) are passing, add updated files to staging 
 $ git add src/server.js
 
 # Commit your changes
@@ -66,7 +75,7 @@ $ git push -u my-fork BRANCH_NAME
 # Go to github, open your forked repository page
 # Click on `New pull request` button
 # Make sure you see base: dev, and original repo name on the left
-#   And BRANCH_NAME, and your fork's name on the right. o
+#   And BRANCH_NAME, and your fork's name on the right. 
 # Hit `Create pull request` button
 
-# Ask other developers to review your code.
+# Once PR is created, make sure Travis build passes. Then ask other developers to review your code.
