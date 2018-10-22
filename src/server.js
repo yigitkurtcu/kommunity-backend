@@ -15,6 +15,7 @@ export const startServer = () => {
 
   server.listen(port);
 
+  /* istanbul ignore next */
   server.on('error', (error) => {
     if (error.syscall !== 'listen') {
       throw error;

@@ -14,6 +14,7 @@ all=error
 
 [options]
 all=true
+module.name_mapper='^\$/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 
 [strict]
 nonstrict-import
