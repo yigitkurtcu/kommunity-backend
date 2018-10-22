@@ -13,7 +13,8 @@
     "lint-fix": "./node_modules/.bin/eslint --fix src/ test/",
     "flow": "flow check --include-warnings",
     "flow-coverage": "flow coverage --color",
-    "flow-typed-add": "flow-typed install"
+    "flow-typed-add": "flow-typed install",
+    "import-db" : "node scripts/db/import-db.js"
   },
   "pre-push": [
     "check-if-not-committed",

@@ -1,15 +1,14 @@
 #!/usr/bin/env node
+import { getAppConfig } from '../config/config';
 
 const http = require('http');
 const app = require('./app');
 
-const getPort = () => {
-  return process.env.PORT !== null && process.env.PORT !== undefined ? process.env.PORT : '3008';
-};
-
 export const startServer = () => {
-  const port = getPort();
-  app.set('port', port);
+  const config = getAppConfig();
+  const { port } = config.appServer;
+  // TODO remove 3008 here, add NODE_ENV to npm script
+  app.set('port', port || 3008);
 
   const server = http.createServer(app);
 
