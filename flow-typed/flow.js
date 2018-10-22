@@ -45,3 +45,7 @@ declare module 'jsonwebtoken' {
 declare module 'passport-strategy' {
   declare module.exports: any;
 }
+
+declare module 'apollo-server-express' {
+  declare module.exports: any;
+}

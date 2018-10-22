@@ -7,6 +7,7 @@ export const initializeRoutes = (app: express$Application) => {
   });
 };
 
+// TODO do we need this?
 export const initializeErrorRoutes = (app: express$Application) => {
   app.use((req: express$Request, res: express$Response) => res.status(404).send());
 

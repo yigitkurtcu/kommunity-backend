@@ -1,0 +1,7 @@
+{
+  "coverageThreshold": {
+    "global": {
+      "statements": 70
+    }
+  }
+}

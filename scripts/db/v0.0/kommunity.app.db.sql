@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `community`.`communities` ;
 CREATE TABLE IF NOT EXISTS `community`.`communities` (
   `uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `name` VARCHAR(100) NOT NULL,
   `tagline` VARCHAR(100) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `community`.`community_users` (
   `community_uuid` CHAR(36) NOT NULL,
   `user_uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `status` ENUM('invited', 'applied', 'approved', 'removed', 'banned') NOT NULL,
   `role` ENUM('guest', 'member', 'moderator', 'admin') NOT NULL,
@@ -65,7 +65,7 @@ DROP TABLE IF EXISTS `community`.`conversation_categories` ;
 CREATE TABLE IF NOT EXISTS `community`.`conversation_categories` (
   `uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `community_uuid` CHAR(36) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `community`.`conversation_posts` ;
 CREATE TABLE IF NOT EXISTS `community`.`conversation_posts` (
   `uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `parent_uuid` CHAR(36) NULL,
   `community_uuid` CHAR(36) NOT NULL,
@@ -101,7 +101,7 @@ DROP TABLE IF EXISTS `community`.`uploads` ;
 CREATE TABLE IF NOT EXISTS `community`.`uploads` (
   `uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `owner_uuid` CHAR(36) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
@@ -119,7 +119,7 @@ DROP TABLE IF EXISTS `community`.`users` ;
 CREATE TABLE IF NOT EXISTS `community`.`users` (
   `uuid` CHAR(36) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` TIMESTAMP NULL,
   `email` VARCHAR(100) NOT NULL,
   `password_hash` VARCHAR(50) NOT NULL,
@@ -128,8 +128,8 @@ CREATE TABLE IF NOT EXISTS `community`.`users` (
   `attributes` JSON NULL,
   `location` VARCHAR(25) NULL,
   `avatar_upload_uuid` CHAR(36) NULL,
-  `last_seen_at` TIMESTAMP NOT NULL DEFAULT 0,
-  `confirmed_email_at` TIMESTAMP NOT NULL DEFAULT 0,
+  `last_seen_at` TIMESTAMP NULL,
+  `confirmed_email_at` TIMESTAMP NULL,
   PRIMARY KEY (`uuid`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 

@@ -1,12 +1,11 @@
 import Sequelize from 'sequelize';
 import { sequelize } from '../../clients/sequelize';
 
-export const User = sequelize.define('user', {
+export const Community = sequelize.define('community', {
   uuid: { type: Sequelize.STRING, primaryKey: true },
-  password_hash: Sequelize.STRING,
-  email: Sequelize.STRING,
-  first_name: Sequelize.STRING,
-  last_name: Sequelize.STRING,
+  desc: Sequelize.STRING,
+  name: Sequelize.STRING,
+  tagline: Sequelize.STRING,
 }, {
   timestamps: false,
 });
