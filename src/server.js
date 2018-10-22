@@ -5,10 +5,8 @@ const http = require('http');
 const app = require('./app');
 
 export const startServer = () => {
-  const config = getAppConfig();
-  const { port } = config.appServer;
-  // TODO remove 3008 here, add NODE_ENV to npm script
-  app.set('port', port || 3008);
+  const { appServer: { port } } = getAppConfig();
+  app.set('port', port);
 
   const server = http.createServer(app);
 
