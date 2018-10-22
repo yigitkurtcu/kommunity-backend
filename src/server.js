@@ -1,8 +1,11 @@
 #!/usr/bin/env node
+import { getAppConfig } from '../config/config';
+
 const http = require('http');
 const app = require('./app');
 
-export const startServer = (config: AppSettings) => {
+export const startServer = () => {
+  const config = getAppConfig();
   const { port } = config.appServer;
   app.set('port', port);
 
