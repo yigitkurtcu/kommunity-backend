@@ -3,7 +3,7 @@ const http = require('http');
 const app = require('./app');
 
 export const startServer = (config: AppSettings) => {
-  const port = config.appServer.port;
+  const { port } = config.appServer;
   app.set('port', port);
 
   const server = http.createServer(app);
