@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { startServer } from '../src/server';
-
-startServer();
+import { getAppConfig } from '../config/config';
+startServer(getAppConfig());

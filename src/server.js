@@ -1,14 +1,9 @@
 #!/usr/bin/env node
-
 const http = require('http');
 const app = require('./app');
 
-const getPort = () => {
-  return process.env.PORT !== null && process.env.PORT !== undefined ? process.env.PORT : '3008';
-};
-
-export const startServer = () => {
-  const port = getPort();
+export const startServer = (config: AppSettings) => {
+  const port = config.appServer.port;
   app.set('port', port);
 
   const server = http.createServer(app);

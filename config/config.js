@@ -5,5 +5,5 @@ export const getAppConfig = (): AppSettings => {
   if (allowedEnvs.indexOf(env) === -1) {
     throw new Error('Invalid environment value');
   }
-  return require(`./config/${env}.json`);
+  return require(`./${env}.json`);
 };
