@@ -1,11 +1,22 @@
 [ignore]
 .*/node_modules/.*
+.*/test/.*
+.*/scripts/.*
+
 [include]
 
 [libs]
 flow-typed
+
 [lints]
+all=error
 
 [options]
 all=true
+
 [strict]
+nonstrict-import
+unclear-type
+unsafe-getters-setters
+untyped-import
+untyped-type-import

@@ -1,5 +1,5 @@
-import { initializeExpressApp } from './setup-express';
-import { initializePassport } from './passport';
+import { initializeExpressApp } from './app-init';
+import { initializePassport } from './passport/init';
 import { initializeRoutes, initializeErrorRoutes } from './routes';
 
 // initialize app
