@@ -8,7 +8,7 @@
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
     "check-travis": "run-s -nl lint flow cover",
     "test": "jest --detectOpenHandles --forceExit ",
-    "cover": "jest --coverage --config .jest.json",
+    "cover": "jest --coverage --config .jest.json --forceExit",
     "lint": "./node_modules/.bin/eslint src/ test/",
     "lint-fix": "./node_modules/.bin/eslint --fix src/ test/",
     "flow": "flow check --include-warnings",
