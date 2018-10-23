@@ -13,6 +13,7 @@ all=error
 
 [options]
 all=true
+module.ignore_non_literal_requires=true
 
 [strict]
 nonstrict-import

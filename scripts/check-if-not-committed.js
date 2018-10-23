@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 
-exec("git status | grep 'modified:' | wc -l", (err, stdout, stderr) => {
+exec('git status | grep "modified:" | wc -l', (err, stdout, stderr) => {
   if (err || stderr) {
     process.exit(1);
   } else {
