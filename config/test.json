@@ -1,10 +1,10 @@
 {
   "appServer": {
     "hostname": "localhost",
-    "port": 3008
+    "port": 4008
   },
   "dbServer": {
-    "hostname": "localhost",
+    "hostname": "",
     "port": 3306
   }
 }
