@@ -8,7 +8,7 @@ beforeAll(() => {
 });
 
 test('server returns 404', (done) => {
-  http.get('http://localhost:3008/unknown-route', (res) => {
+  http.get('http://localhost:4008/unknown-route', (res) => {
     expect(res.statusCode).toBe(404);
     done();
   });
