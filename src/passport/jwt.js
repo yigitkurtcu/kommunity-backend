@@ -9,7 +9,7 @@ const JwtStrategy = function JwtStrategy() {
 };
 
 JwtStrategy.prototype.authenticate = function authenticate(req: express$Request) {
-  const token = get(req, 'body.token') || req.headers['x-access-token'];
+  const token = get(req, 'body.token') || req.headers.authorization;
   return getUserFromToken(token, (err, user) => {
     if (err) {
       return this.fail();
