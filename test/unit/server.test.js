@@ -8,14 +8,14 @@ beforeAll(() => {
 });
 
 test('server returns 401', (done) => {
-  http.get('http://localhost:3008/member/me', (res) => {
+  http.get('http://localhost:4008/member/me', (res) => {
     expect(res.statusCode).toBe(401);
     done();
   });
 });
 
 test('server - /health returns OK', (done) => {
-  http.get('http://localhost:3008/health', (res) => {
+  http.get('http://localhost:4008/health', (res) => {
     expect(res.statusCode).toBe(200);
 
     let response = '';

@@ -3,16 +3,24 @@
 ```
 $ npm install
 $ npm install -g nodemon
+$ npm i -g babel-cli
 ```
 
 ## Setup mysql
-..
+Installer: https://dev.mysql.com/downloads/mysql/
 
-## Import sample database
-..
+## Import sample database and data
 
+Import current version:
+- npm run import-db
 
-## install NVM (node version manager):
+Or Import specific version:
+- npm run import-db v0.0
+
+Database versions:
+- v0.0 (Current)
+
+## install NVM (node version manager)
 Windows: https://github.com/coreybutler/nvm-windows/releases
 Mac: https://github.com/creationix/nvm/blob/master/README.md#installation
 
@@ -27,22 +35,15 @@ Windows? do:
 - right after if block, put:
 `this.npm += ".cmd";`
 
-## install mysql
-Mac: Sequel pro, mysql workbench
-Windows: Mysql Work bench -- https://dev.mysql.com/downloads/workbench/
-
-
-- npm i -g babel-cli
-
 ## Adding new flow type definition
-In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed. 
+In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed.
 
 `npm run flow-typed-add express@4`
 
 ## How to develop new features
 
-- Fork this repo 
-- Click on `Clone or download` button 
+- Fork this repo
+- Click on `Clone or download` button
 - Open your terminal:
 
 ```
@@ -63,7 +64,7 @@ $ npm run flow
 # Run unit tests
 $ npm run test
 
-# If all checks (lint, flow, test) are passing, add updated files to staging 
+# If all checks (lint, flow, test) are passing, add updated files to staging
 $ git add src/server.js
 
 # Commit your changes
@@ -75,7 +76,7 @@ $ git push -u my-fork BRANCH_NAME
 # Go to github, open your forked repository page
 # Click on `New pull request` button
 # Make sure you see base: dev, and original repo name on the left
-#   And BRANCH_NAME, and your fork's name on the right. 
+#   And BRANCH_NAME, and your fork's name on the right.
 # Hit `Create pull request` button
 
 # Once PR is created, make sure Travis build passes. Then ask other developers to review your code.

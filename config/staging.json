@@ -4,7 +4,7 @@
     "port": 0
   },
   "dbServer": {
-    "hostname": "localhost",
+    "hostname": "",
     "port": 0
   }
 }
