@@ -6,6 +6,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import { initializePassport } from './passport/init';
 import { initializeRoutes } from './routes';
+import { initializeApolloServer } from './graphql/server';
 
 const Sentry = require('@sentry/node');
 
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 
 initializePassport(app);
 initializeRoutes(app);
+initializeApolloServer(app);
 
 // eslint-disable-next-line
 app.use((req: express$Request, res: express$Response, next: express$NextFunction) => {

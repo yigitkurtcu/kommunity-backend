@@ -40,12 +40,8 @@ export const startServer = () => {
   });
 
   server.on('listening', () => {
-    const addr = server.address();
-    const bind = typeof addr === 'string'
-      ? `pipe ${addr}`
-      : `port ${addr.port}`;
     /* eslint-disable-next-line no-console */
-    console.log(`Listening on ${bind}`);
+    console.log(`EXPRESS 🎢  Server is ready at http://localhost:${port}`);
   });
 
   return server;
