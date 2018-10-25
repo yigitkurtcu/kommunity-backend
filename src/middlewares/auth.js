@@ -7,6 +7,5 @@ export default (req: express$Request, res: express$Response, next: express$NextF
   if (req.originalUrl === USERNAME_LOGIN_ROUTE) {
     return passport.authenticate('local', { session: false })(req, res, next);
   }
-
   return passport.authenticate('jwt', { session: false })(req, res, next);
 };

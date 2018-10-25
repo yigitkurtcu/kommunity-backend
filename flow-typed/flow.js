@@ -57,3 +57,7 @@ declare module '@sentry/node' {
 declare module 'md5' {
   declare module.exports: any;
 }
+
+declare module 'uuid' {
+  declare module.exports: any;
+}
