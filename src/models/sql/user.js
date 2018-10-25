@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import Sequelize, { DATE } from 'sequelize';
 import { sequelize } from '../../clients/sequelize';
 
 export const User = sequelize.define('user', {
@@ -7,6 +7,18 @@ export const User = sequelize.define('user', {
   email: Sequelize.STRING,
   first_name: Sequelize.STRING,
   last_name: Sequelize.STRING,
+  createdAt: {
+    field: 'created_at',
+    type: DATE,
+  },
+  updatedAt: {
+    field: 'updated_at',
+    type: DATE,
+  },
+  deletedAt: {
+    field: 'deleted_at',
+    type: DATE,
+  },
 }, {
-  timestamps: false,
+  paranoid: true,
 });

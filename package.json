@@ -40,7 +40,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
-    "sequelize": "^4.39.0"
+    "sequelize": "^4.39.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
