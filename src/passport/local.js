@@ -14,7 +14,7 @@ const LocalPassportStrategy = () => {
       const user = await User.findOne({
         where: {
           email,
-          password_hash: md5(password),
+          passwordHash: md5(password),
         },
       });
       if (user) {

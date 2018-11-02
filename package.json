@@ -14,7 +14,7 @@
     "flow": "flow check --include-warnings",
     "flow-coverage": "flow coverage --color",
     "flow-typed-add": "flow-typed install",
-    "import-db": "node scripts/db/import-db.js"
+    "db-setup": "sequelize db:drop & sequelize db:create && sequelize db:migrate &&sequelize db:seed:all"
   },
   "pre-push": [
     "check-if-not-committed",
@@ -41,6 +41,7 @@
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
     "sequelize": "^4.39.0",
+    "sequelize-cli": "^5.2.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

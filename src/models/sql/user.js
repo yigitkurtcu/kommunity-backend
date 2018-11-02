@@ -1,24 +1,58 @@
-import Sequelize, { DATE } from 'sequelize';
+import Sequelize from 'sequelize';
 import { sequelize } from '../../clients/sequelize';
 
-export const User = sequelize.define('user', {
-  uuid: { type: Sequelize.STRING, primaryKey: true },
-  password_hash: Sequelize.STRING,
-  email: Sequelize.STRING,
-  first_name: Sequelize.STRING,
-  last_name: Sequelize.STRING,
+const User = sequelize.define('User', {
+  uuid: {
+    type: Sequelize.UUID,
+    primaryKey: true,
+    allowNull: false,
+  },
   createdAt: {
-    field: 'created_at',
-    type: DATE,
+    type: Sequelize.DATE,
+    allowNull: false,
   },
   updatedAt: {
-    field: 'updated_at',
-    type: DATE,
+    type: Sequelize.DATE,
   },
   deletedAt: {
-    field: 'deleted_at',
-    type: DATE,
+    type: Sequelize.DATE,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  passwordHash: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  firstName: {
+    type: Sequelize.STRING,
+  },
+  lastName: {
+    type: Sequelize.STRING,
+  },
+  userAttributes: {
+    type: Sequelize.JSON,
+  },
+  location: {
+    type: Sequelize.STRING,
+  },
+  avatarUploadUuid: {
+    type: Sequelize.UUID,
+  },
+  lastSeenAt: {
+    type: Sequelize.DATE,
+  },
+  confirmedEmailAt: {
+    type: Sequelize.DATE,
   },
 }, {
   paranoid: true,
 });
+User.prototype.associate = function associate(models) {
+  User.hasMany(models.CommunityUser, {
+    foreignKey: 'userUuid',
+  });
+};
+
+export { User };

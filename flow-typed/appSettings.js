@@ -6,6 +6,10 @@ export class AppServerSettings {
 export class DbServerSettings {
   hostname: string;
   port: number;
+  dialect: string;
+  database: string;
+  username: string;
+  password: string;
 }
 
 export class AppSettings {

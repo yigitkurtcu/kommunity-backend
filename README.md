@@ -9,16 +9,21 @@ $ npm i -g babel-cli
 ## Setup mysql
 Installer: https://dev.mysql.com/downloads/mysql/
 
+IMPORTANT : For the development environment, set the root user password to "community-db-common-test-password".
+
 ## Import sample database and data
 
-Import current version:
-- npm run import-db
+Install:
 
-Or Import specific version:
-- npm run import-db v0.0
+- $ npm run db-install
+Or
+- $ npm run db-install-with-seed
 
-Database versions:
-- v0.0 (Current)
+Reinstall:
+
+- $ npm run db-reinstall
+Or
+- $ npm run db-reinstall-with-seed
 
 ## install NVM (node version manager)
 Windows: https://github.com/coreybutler/nvm-windows/releases

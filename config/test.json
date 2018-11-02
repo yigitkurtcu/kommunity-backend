@@ -4,7 +4,11 @@
     "port": 4008
   },
   "dbServer": {
-    "hostname": "",
-    "port": 3306
+    "hostname": "localhost",
+    "port": 3306,
+    "dialect": "mysql",
+    "database": "community",
+    "username": "root",
+    "password": "community-db-common-test-password"
   }
 }

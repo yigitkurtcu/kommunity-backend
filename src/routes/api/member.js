@@ -18,7 +18,7 @@ router.post('/signup', (req: express$RenderCallback, res: express$Response) => {
   User.create({
     uuid: uuid(),
     email,
-    password_hash: md5(password),
+    passwordHash: md5(password),
   }).then((createdUser) => {
     res.json({
       user: createdUser,
