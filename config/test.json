@@ -1,14 +1,14 @@
 {
   "appServer": {
-    "hostname": "localhost",
-    "port": 4008
+    "hostname": "",
+    "port": 0
   },
   "dbServer": {
-    "hostname": "localhost",
-    "port": 3306,
-    "dialect": "mysql",
-    "database": "community",
-    "username": "root",
-    "password": "community-db-common-test-password"
+    "hostname": "",
+    "port": 0,
+    "dialect": "",
+    "database": "",
+    "username": "",
+    "password": ""
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { getAppConfig } from '../config/config';
+import { getAppConfig } from '../config';
 
 const http = require('http');
 const app = require('./app');
