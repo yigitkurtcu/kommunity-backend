@@ -7,8 +7,8 @@
     "hostname": "localhost",
     "port": 3306,
     "dialect": "mysql",
-    "database": "community",
+    "database": "community-development",
     "username": "root",
-    "password": "community-db-common-test-password"
+    "password": ""
   }
 }
