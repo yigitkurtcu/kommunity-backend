@@ -18,21 +18,13 @@ cd kommunity-backend
 npm install
 ```
 
-## 2. Install mysql, create new database
-Download and install MySQL Community Server
+## 2. Install MAMP 
+Download and install MAMP macOS or Windows:
+https://www.mamp.info/en/downloads/
 
-Install MySQL Installer: https://dev.mysql.com/downloads/windows/installer/8.0.html
+Once you install, open the MAMP app and make sure mysql server is started (green box).
 
-Once you install `MySQL Community Server`, open Workbench app. Next to MySQL connections title, there is a plus button. Hit that, and create a new connection:
-
-```
-hostname: localhost
-port: 3306
-username: root
-password: root
-```
-
-Double click on the new connection you just created. From the left-menu, click on Instance Start / Shutdown button. Click on **Start Server**.
+You can visit http://localhost/phpMyAdmin/ to see the tables, etc.
 
 ## 3. Install Node.js
 Go to [node.js v8.11.4 installation page](https://nodejs.org/en/blog/release/v8.11.4/). Pick either macOS 64-bit installer or Windows Installer depending on your operation system.

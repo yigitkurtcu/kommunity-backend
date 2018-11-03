@@ -9,6 +9,6 @@
     "dialect": "mysql",
     "database": "community-test",
     "username": "root",
-    "password": ""
+    "password": "root"
   }
 }
