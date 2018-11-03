@@ -1,83 +1,105 @@
-# Setup
+# Kommunity Back-End Server
+Kommunity is an online app for creating & joining communities. This is the backend app.
+
+Check product [documentation](https://docs.google.com/document/d/1P9znOKfQIHDP3BVS5ptvFgzSLmL0vo4WTAZrcKatFBA) for more details.
+
+# Instructions
+1. Fork this repo
+2. Click on `Clone or download` button and copy url
+3. Run the following command:
+```bash
+# Replace FORK_URL with what you just copied
+git clone FORK_URL
+```
+
+## 1. Install dependencies
+``` bash
+cd kommunity-backend
+npm install
+```
+
+## 2. Install mysql, create new database
+Download and install MySQL Community Server
+
+Install MySQL Installer: https://dev.mysql.com/downloads/windows/installer/8.0.html
+
+Once you install `MySQL Community Server`, open Workbench app. Next to MySQL connections title, there is a plus button. Hit that, and create a new connection:
 
 ```
-$ npm install
-$ npm install -g nodemon
-$ npm i -g babel-cli
+hostname: localhost
+port: 3306
+username: root
+password: root
 ```
 
-## Setup mysql
-Installer: https://dev.mysql.com/downloads/mysql/
+Double click on the new connection you just created. From the left-menu, click on Instance Start / Shutdown button. Click on **Start Server**.
 
-IMPORTANT : For the development environment, set the root user password to "community-db-common-test-password".
+## 3. Install Node.js
+Go to [node.js v8.11.4 installation page](https://nodejs.org/en/blog/release/v8.11.4/). Pick either macOS 64-bit installer or Windows Installer depending on your operation system.
 
-## Import sample database and data
+### Optional
+NVM really makes it easier to switch between node.js versions. If you are working on other projects that require different versions of node/npm, then you can install `nvm` from here:
+- Windows: https://github.com/coreybutler/nvm-windows/releases
+- Mac: https://github.com/creationix/nvm/blob/master/README.md#installation
 
-Install:
+Once you install NVM, 
+```bash
+nvm install 8.11.4
+nvm use 8.11.4
+```
 
-- $ npm run db-install
-Or
-- $ npm run db-install-with-seed
+#### Fix NVM issue
+There is a bug in nvm codebase, and it breaks on **windows** machines.
 
-Reinstall:
-
-- $ npm run db-reinstall
-Or
-- $ npm run db-reinstall-with-seed
-
-## install NVM (node version manager)
-Windows: https://github.com/coreybutler/nvm-windows/releases
-Mac: https://github.com/creationix/nvm/blob/master/README.md#installation
-
-- nvm install 8.11.4
-- nvm use 8.11.4
-
-### Fix NVM
-
-Windows? do:
-- open node_modules/pre-push/index.js
+Do the following if you are experiencing issues:
+- open `node_modules/pre-push/index.js`
 - find `if (!this.npm)`
-- right after if block, put:
-`this.npm += ".cmd";`
+- right after if block, put: `this.npm += ".cmd";`
 
-## Adding new flow type definition
-In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed.
+## 4. Import sample database and data
 
-`npm run flow-typed-add express@4`
-
-## How to develop new features
-
-- Fork this repo
-- Click on `Clone or download` button
-- Open your terminal:
-
+Import current version:
+```bash
+npm run db-setup
 ```
-# Replace XXX with what you just pasted
+
+## 5. Start backend server
+```bash
+npm run start
+```
+
+# Git instructions for developing new features
+
+```bash
+cd kommunity-backend
+
+# Replace FORK_URL with your remote fork url
 $ git remote add my-fork FORK_URL
 
-# Create a new feature branch ()
-$ git checkout -b BRANCH_NAME
+# Create a new feature branch
+git checkout -b BRANCH_NAME
 
 # Make changes in the code base ...
 
 # Check for formatting
-$ npm run lint
+npm run lint
 
 # Check for flow types
-$ npm run flow
+npm run flow
 
 # Run unit tests
-$ npm run test
+npm run test
 
 # If all checks (lint, flow, test) are passing, add updated files to staging
-$ git add src/server.js
+git add src/server.js
 
 # Commit your changes
-$ git commit -m "added new auth method"
+git commit -m "your commit message"
 
 # When you are ready to create a PR, push your changes to your fork
-$ git push -u my-fork BRANCH_NAME
+git push -u my-fork BRANCH_NAME
 
+# THEN:
 # Go to github, open your forked repository page
 # Click on `New pull request` button
 # Make sure you see base: dev, and original repo name on the left
@@ -85,3 +107,14 @@ $ git push -u my-fork BRANCH_NAME
 # Hit `Create pull request` button
 
 # Once PR is created, make sure Travis build passes. Then ask other developers to review your code.
+```
+
+## Flow
+We are using flow for static type checking.
+
+### Adding new flow type definition
+In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed.
+
+```bash
+npm run flow-typed-add express@4
+```
