@@ -110,7 +110,7 @@ git push -u my-fork BRANCH_NAME
 ## Flow
 We are using flow for static type checking.
 
-### Adding new flow type definition
+#### Adding new flow type definition
 In order to avoid flow type errors, you can fetch definitions for popular modules from flow-typed.
 
 ```bash
