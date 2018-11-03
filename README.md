@@ -1,4 +1,4 @@
-# Kommunity Back-End Server
+# Kommunity Backend Server
 Kommunity is an online app for creating & joining communities. This is the backend app.
 
 Check product [documentation](https://docs.google.com/document/d/1P9znOKfQIHDP3BVS5ptvFgzSLmL0vo4WTAZrcKatFBA) for more details.
