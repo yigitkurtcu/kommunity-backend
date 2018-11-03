@@ -57,8 +57,6 @@ Do the following if you are experiencing issues:
 - right after if block, put: `this.npm += ".cmd";`
 
 ## 4. Import sample database and data
-
-Import current version:
 ```bash
 npm run db-setup
 ```
