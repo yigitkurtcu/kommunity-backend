@@ -17,7 +17,7 @@ Download and install MAMP
 - macOS v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/7.2.11/
 - Windows v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.11/
 
-Once you install, open the XAMPP app and **make sure APACHE and MYSQL server is started** (green box).
+Once you install, open the XAMPP app and **make sure APACHE and MYSQL server are both started** (green box).
 
 You can visit http://localhost/phpmyadmin/ to see the tables, etc.
 
