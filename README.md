@@ -18,13 +18,14 @@ cd kommunity-backend
 npm install
 ```
 
-## 2. Install MAMP 
-Download and install MAMP macOS or Windows:
-https://www.mamp.info/en/downloads/
+## 2. Install XAMPP 
+Download and install MAMP
+- macOS v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/7.2.11/
+- Windows v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.11/
 
-Once you install, open the MAMP app and make sure mysql server is started (green box).
+Once you install, open the XAMPP app and **make sure APACHE and MYSQL server is started** (green box).
 
-You can visit http://localhost/phpMyAdmin/ to see the tables, etc.
+You can visit http://localhost/phpmyadmin/ to see the tables, etc.
 
 ## 3. Install Node.js
 Go to [node.js v8.11.4 installation page](https://nodejs.org/en/blog/release/v8.11.4/). Pick either macOS 64-bit installer or Windows Installer depending on your operation system.
