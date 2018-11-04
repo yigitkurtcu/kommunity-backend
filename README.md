@@ -43,28 +43,25 @@ Do the following if you are experiencing issues:
 - find `if (!this.npm)`
 - right after if block, put: `this.npm += ".cmd";`
 
-## 3. Import sample database and data
-```bash
-npm run db-setup
-```
-
-## 4. Install dependencies
+## 3. Install dependencies
 ``` bash
 cd kommunity-backend
 npm install
 ```
 
-## 5. Create DB tables and generate sample data
+## 4. Create DB tables and generate sample data
 ``` bash
 npm run db-setup
 ```
 
-## 6. Start backend server
+## 5. Start backend server
 ```bash
 npm run start
 ```
 
-# Git instructions for developing new features
+# Other details
+
+## Git instructions for developing new features
 
 ```bash
 cd kommunity-backend
