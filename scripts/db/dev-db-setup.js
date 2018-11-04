@@ -7,5 +7,5 @@ sequelize.sync({ force: true, match: /-development$/ }).then(() => {
 }).catch((err) => {
   console.log('\n>>> DB SETUP FAILED!!!\n');
   console.log(err);
-  process.exit();
+  process.exit(1);
 });

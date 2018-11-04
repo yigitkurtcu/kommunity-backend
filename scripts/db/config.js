@@ -1,3 +1,6 @@
+// we need this for es6 features:
+require('babel-core/register');
+
 const dbConfig = require('../../config').dbServer;
 
 const dbSettings = {

@@ -6,47 +6,46 @@ const ConversationPost = sequelize.define('ConversationPost', {
     type: Sequelize.UUID,
     primaryKey: true,
     allowNull: false,
-  },
-  createdAt: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: Sequelize.DATE,
-  },
-  deletedAt: {
-    type: Sequelize.DATE,
+    field: 'uuid',
   },
   userUuid: {
     type: Sequelize.UUID,
     allowNull: false,
+    field: 'user_uuid',
   },
   parentUuid: {
     type: Sequelize.UUID,
+    field: 'parent_uuid',
   },
   communityUuid: {
     type: Sequelize.UUID,
     allowNull: false,
+    field: 'community_uuid',
   },
   categoryUuid: {
     type: Sequelize.UUID,
     allowNull: false,
+    field: 'category_uuid',
   },
   content: {
     type: Sequelize.TEXT,
     allowNull: false,
+    field: 'content',
   },
   viewCount: {
     type: Sequelize.INTEGER,
     defaultValue: 0,
+    field: 'view_count',
   },
   attachmentUploadUuids: {
     type: Sequelize.STRING,
+    field: 'attachment_upload_uuids',
   },
 }, {
   paranoid: true,
+  underscored: true,
+  freezeTableName: true,
+  tableName: 'conversation_posts',
 });
-// ConversationPost.prototype.associate = function associate(models) {
-// };
 
 export default ConversationPost;

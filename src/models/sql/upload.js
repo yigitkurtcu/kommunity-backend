@@ -6,40 +6,37 @@ const Upload = sequelize.define('Upload', {
     type: Sequelize.UUID,
     primaryKey: true,
     allowNull: false,
-  },
-  createdAt: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: Sequelize.DATE,
-  },
-  deletedAt: {
-    type: Sequelize.DATE,
+    field: 'uuid',
   },
   ownerUuid: {
     type: Sequelize.UUID,
     allowNull: false,
+    field: 'owner_uuid',
   },
   name: {
     type: Sequelize.STRING,
     allowNull: false,
+    field: 'name',
   },
   originalFileName: {
     type: Sequelize.STRING,
     allowNull: false,
+    field: 'original_file_name',
   },
   type: {
     type: Sequelize.ENUM('user_avatar', 'community_avatar', 'post_attachment'),
     allowNull: false,
+    field: 'type',
   },
   shortDesc: {
     type: Sequelize.STRING,
+    field: 'short_desc',
   },
 }, {
   paranoid: true,
+  underscored: true,
+  freezeTableName: true,
+  tableName: 'uploads',
 });
-// Upload.prototype.associate = function associate(models) {
-// };
 
 export default Upload;
