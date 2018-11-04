@@ -32,7 +32,7 @@ const User = sequelize.define('User', {
     type: Sequelize.STRING,
   },
   userAttributes: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING,
   },
   location: {
     type: Sequelize.STRING,
@@ -55,4 +55,4 @@ User.prototype.associate = function associate(models) {
   });
 };
 
-export { User };
+export default User;

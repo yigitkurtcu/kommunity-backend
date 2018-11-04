@@ -1,11 +1,6 @@
 import http from 'http';
-import { startServer } from '$/server';
 
-let server;
-
-beforeAll(() => {
-  server = startServer();
-});
+const server = require('$/server');
 
 test('server returns 404', (done) => {
   http.get('http://localhost:4008/unknown-route', (res) => {

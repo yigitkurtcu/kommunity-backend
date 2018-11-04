@@ -32,13 +32,13 @@ const Community = sequelize.define('Community', {
     type: Sequelize.STRING,
   },
   socialLinks: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING,
   },
   avatarUploadUuid: {
     type: Sequelize.UUID,
   },
   tier: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   visibility: {
@@ -63,4 +63,4 @@ Community.prototype.associate = function associate(models) {
   });
 };
 
-export { Community };
+export default Community;

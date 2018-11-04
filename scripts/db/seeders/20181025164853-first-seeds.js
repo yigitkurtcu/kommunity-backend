@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -91,8 +91,7 @@ module.exports = {
               isActive: 1,
             },
           ],
-          {}
-        ),
+          {},),
         queryInterface.bulkInsert('CommunityUsers',
           [
             {
@@ -288,8 +287,7 @@ module.exports = {
               role: 'member',
             },
           ],
-          {}
-        ),
+          {},),
         queryInterface.bulkInsert('ConversationCategories',
           [
             {
@@ -533,8 +531,7 @@ module.exports = {
               minRoleRequired: 'admin',
             },
           ],
-          {}
-        ),
+          {},),
         queryInterface.bulkInsert('ConversationPosts',
           [
             {
@@ -658,8 +655,7 @@ module.exports = {
               attachmentUploadUuids: '{"uuids" : ["23ea065c-d6a1-11e8-9f8b-f2801f1b9fd1"]}',
             },
           ],
-          {}
-        ),
+          {},),
         queryInterface.bulkInsert('Uploads',
           [
             {
@@ -820,11 +816,10 @@ module.exports = {
               name: 'Test User Post Attachment 05',
               originalFileName: 'test_05.doc',
               type: 'post_attachment',
-              shortDesc:  'Test user post attachment file 05.',
+              shortDesc: 'Test user post attachment file 05.',
             },
           ],
-          {}
-        ),
+          {},),
         queryInterface.bulkInsert('Users',
           [
             {
@@ -835,7 +830,7 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'Turkey',
               avatarUploadUuid: '23ea1110-d6a1-11e8-9f8b-f2801f1b9fd1',
               lastSeenAt: new Date(),
@@ -849,7 +844,7 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'Germany',
               avatarUploadUuid: '23ea0b02-d6a1-11e8-9f8b-f2801f1b9fd1',
               lastSeenAt: new Date(),
@@ -863,7 +858,7 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'United Kingdom',
               avatarUploadUuid: '23ea0530-d6a1-11e8-9f8b-f2801f1b9fd1',
               lastSeenAt: new Date(),
@@ -877,7 +872,7 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'Germany',
               avatarUploadUuid: '23fa0530-d6a1-11e8-9f8b-f2801f1b9fd1',
               lastSeenAt: new Date(),
@@ -891,7 +886,7 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'United Kingdom',
               avatarUploadUuid: null,
               lastSeenAt: null,
@@ -905,21 +900,20 @@ module.exports = {
               passwordHash: 'e10adc3949ba59abbe56e057f20f883e',
               firstName: 'Firstname',
               lastName: 'Lastname',
-              attributes: '{"title":"Test Title"}',
+              userAttributes: '{"title":"Test Title"}',
               location: 'Turkey',
               avatarUploadUuid: null,
               lastSeenAt: null,
               confirmedEmailAt: null,
             },
           ],
-          {}
-        ),
-      ]
+          {},),
+      ],
     );
   },
 
   down: (queryInterface, Sequelize) => {
-    return  Promise.all(
+    return Promise.all(
       [
         queryInterface.bulkDelete('Communities', null, {}),
         queryInterface.bulkDelete('CommunityUsers', null, {}),
@@ -927,7 +921,7 @@ module.exports = {
         queryInterface.bulkDelete('ConversationPosts', null, {}),
         queryInterface.bulkDelete('Uploads', null, {}),
         queryInterface.bulkDelete('Users', null, {}),
-      ]
+      ],
     );
-  }
+  },
 };

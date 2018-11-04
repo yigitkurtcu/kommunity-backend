@@ -42,4 +42,4 @@ const Upload = sequelize.define('Upload', {
 // Upload.prototype.associate = function associate(models) {
 // };
 
-export { Upload };
+export default Upload;

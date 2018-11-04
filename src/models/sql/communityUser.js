@@ -34,4 +34,4 @@ const CommunityUser = sequelize.define('CommunityUser', {
 // CommunityUser.prototype.associate = function associate(models) {
 // };
 
-export { CommunityUser };
+export default CommunityUser;

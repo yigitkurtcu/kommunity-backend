@@ -46,4 +46,4 @@ ConversationCategory.prototype.associate = function associate(models) {
   });
 };
 
-export { ConversationCategory };
+export default ConversationCategory;

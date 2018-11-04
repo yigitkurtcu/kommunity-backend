@@ -1,8 +1,15 @@
 import Sequelize from 'sequelize';
+import config from '../../config';
 
-export const sequelize = new Sequelize('community', 'root', 'password', {
-  host: 'localhost',
-  dialect: 'mysql',
+const {
+  dbServer: {
+    hostname, dialect, database, username, password,
+  },
+} = config;
+
+export const sequelize = new Sequelize(database, username, password, {
+  host: hostname,
+  dialect,
   pool: {
     max: 5,
     min: 0,

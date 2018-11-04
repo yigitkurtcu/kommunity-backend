@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import { Community } from '../models/sql/community';
+import { Community } from '../models/sql';
 
 export default {
   Query: {

@@ -2,7 +2,9 @@ import lodash from 'lodash';
 import md5 from 'md5';
 import { Strategy as LocalStrategy } from 'passport-local';
 
-import { User } from '../models/sql/user';
+import { User } from '../models/sql';
+
+const Sentry = require('@sentry/node');
 
 const LocalPassportStrategy = () => {
   return new LocalStrategy({
@@ -21,7 +23,9 @@ const LocalPassportStrategy = () => {
         return done(null, lodash.pick(user, ['uuid', 'username', 'firstname', 'lastname']));
       }
       // eslint-disable-next-line no-empty
-    } catch (ex) {}
+    } catch (ex) {
+      Sentry.captureException(ex);
+    }
 
     // couldn't find/authenticate the user
     return done(null, false);

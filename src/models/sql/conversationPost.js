@@ -41,7 +41,7 @@ const ConversationPost = sequelize.define('ConversationPost', {
     defaultValue: 0,
   },
   attachmentUploadUuids: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING,
   },
 }, {
   paranoid: true,
@@ -49,4 +49,4 @@ const ConversationPost = sequelize.define('ConversationPost', {
 // ConversationPost.prototype.associate = function associate(models) {
 // };
 
-export { ConversationPost };
+export default ConversationPost;
