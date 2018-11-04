@@ -5,20 +5,14 @@ Check product [documentation](https://docs.google.com/document/d/1P9znOKfQIHDP3B
 
 # Instructions
 1. Fork this repo
-2. Click on `Clone or download` button and copy url
+2. Click on `Clone or download` button and copy the url
 3. Run the following command:
 ```bash
 # Replace FORK_URL with what you just copied
 git clone FORK_URL
 ```
 
-## 1. Install dependencies
-``` bash
-cd kommunity-backend
-npm install
-```
-
-## 2. Install XAMPP 
+## 1. Install XAMPP 
 Download and install MAMP
 - macOS v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/7.2.11/
 - Windows v7.2.11: https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.11/
@@ -27,7 +21,7 @@ Once you install, open the XAMPP app and **make sure APACHE and MYSQL server is 
 
 You can visit http://localhost/phpmyadmin/ to see the tables, etc.
 
-## 3. Install Node.js
+## 2. Install Node.js
 Go to [node.js v8.11.4 installation page](https://nodejs.org/en/blog/release/v8.11.4/). Pick either macOS 64-bit installer or Windows Installer depending on your operation system.
 
 ### Optional
@@ -49,12 +43,23 @@ Do the following if you are experiencing issues:
 - find `if (!this.npm)`
 - right after if block, put: `this.npm += ".cmd";`
 
-## 4. Import sample database and data
+## 3. Import sample database and data
 ```bash
 npm run db-setup
 ```
 
-## 5. Start backend server
+## 4. Install dependencies
+``` bash
+cd kommunity-backend
+npm install
+```
+
+## 5. Create DB tables and generate sample data
+``` bash
+npm run db-setup
+```
+
+## 6. Start backend server
 ```bash
 npm run start
 ```
