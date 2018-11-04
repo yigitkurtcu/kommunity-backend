@@ -4,7 +4,7 @@ import md5 from 'md5';
 
 import { generateTokenForUser } from '$/lib/token';
 import authenticationMiddleware from '$/middlewares/auth';
-import { User } from '$/models/sql/user';
+import { User } from '$/models/sql';
 
 const router = express.Router();
 

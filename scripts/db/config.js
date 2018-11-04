@@ -1,11 +1,14 @@
-const dbCnf = require('../../config/development.json').dbServer;
+// we need this for es6 features:
+require('babel-core/register');
+
+const dbConfig = require('../../config').dbServer;
 
 const dbSettings = {
-  username: dbCnf.username,
-  password: dbCnf.password,
-  database: dbCnf.database,
-  host: dbCnf.hostname,
-  dialect: dbCnf.dialect,
+  username: dbConfig.username,
+  password: dbConfig.password,
+  database: dbConfig.database,
+  host: dbConfig.hostname,
+  dialect: dbConfig.dialect,
 };
 
 module.exports = {
