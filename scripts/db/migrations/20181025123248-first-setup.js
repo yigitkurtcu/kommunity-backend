@@ -1,4 +1,5 @@
-'use strict';
+
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return Promise.all(
@@ -35,13 +36,13 @@ module.exports = {
               type: Sequelize.STRING,
             },
             socialLinks: {
-              type: Sequelize.JSON,
+              type: Sequelize.STRING,
             },
             avatarUploadUuid: {
               type: Sequelize.UUID,
             },
             tier: {
-              type: Sequelize.JSON,
+              type: Sequelize.STRING,
               allowNull: false,
             },
             visibility: {
@@ -54,8 +55,7 @@ module.exports = {
               allowNull: false,
               defaultValue: true,
             },
-          }
-        ).then(() => queryInterface.addIndex('Communities', [ 'name' ], { indicesType: 'UNIQUE' })),
+          },).then(() => queryInterface.addIndex('Communities', ['name'], { indicesType: 'UNIQUE' })),
         queryInterface.createTable('CommunityUsers',
           {
             communityUuid: {
@@ -84,8 +84,7 @@ module.exports = {
               type: Sequelize.ENUM('guest', 'member', 'moderator', 'admin', 'owner'),
               allowNull: false,
             },
-          }
-        ).then(() => queryInterface.addIndex('CommunityUsers', [ 'communityUuid', 'userUuid' ], { indicesType: 'UNIQUE' })),
+          },).then(() => queryInterface.addIndex('CommunityUsers', ['communityUuid', 'userUuid'], { indicesType: 'UNIQUE' })),
         queryInterface.createTable('ConversationCategories',
           {
             uuid: {
@@ -123,8 +122,7 @@ module.exports = {
               type: Sequelize.ENUM('guest', 'member', 'moderator', 'admin'),
               allowNull: false,
             },
-          }
-        ),
+          },),
         queryInterface.createTable('ConversationPosts',
           {
             uuid: {
@@ -166,10 +164,9 @@ module.exports = {
               defaultValue: 0,
             },
             attachmentUploadUuids: {
-              type: Sequelize.JSON,
+              type: Sequelize.STRING,
             },
-          }
-        ),
+          },),
         queryInterface.createTable('Uploads',
           {
             uuid: {
@@ -206,8 +203,7 @@ module.exports = {
             shortDesc: {
               type: Sequelize.STRING,
             },
-          }
-        ),
+          },),
         queryInterface.createTable('Users',
           {
             uuid: {
@@ -240,7 +236,7 @@ module.exports = {
               type: Sequelize.STRING,
             },
             attributes: {
-              type: Sequelize.JSON,
+              type: Sequelize.STRING,
             },
             location: {
               type: Sequelize.STRING,
@@ -254,9 +250,8 @@ module.exports = {
             confirmedEmailAt: {
               type: Sequelize.DATE,
             },
-          }
-        ).then(() => queryInterface.addIndex('Users', [ 'email' ], { indicesType: 'UNIQUE' })),
-      ]
+          },).then(() => queryInterface.addIndex('Users', ['email'], { indicesType: 'UNIQUE' })),
+      ],
     );
   },
   down: (queryInterface, Sequelize) => {
@@ -268,7 +263,7 @@ module.exports = {
         queryInterface.dropTable('ConversationPosts'),
         queryInterface.dropTable('Uploads'),
         queryInterface.dropTable('Users'),
-      ]
-    )
-  }
+      ],
+    );
+  },
 };
