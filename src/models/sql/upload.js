@@ -1,42 +1,41 @@
-import Sequelize from 'sequelize';
-import { sequelize } from '../../clients/sequelize';
+module.exports = (sequelize, DataTypes) => {
+  const Upload = sequelize.define('Upload', {
+    uuid: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      allowNull: false,
+      field: 'uuid',
+    },
+    ownerUuid: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      field: 'owner_uuid',
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: 'name',
+    },
+    originalFileName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: 'original_file_name',
+    },
+    type: {
+      type: DataTypes.ENUM('user_avatar', 'community_avatar', 'post_attachment'),
+      allowNull: false,
+      field: 'type',
+    },
+    shortDesc: {
+      type: DataTypes.STRING,
+      field: 'short_desc',
+    },
+  }, {
+    paranoid: true,
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'uploads',
+  });
 
-const Upload = sequelize.define('Upload', {
-  uuid: {
-    type: Sequelize.UUID,
-    primaryKey: true,
-    allowNull: false,
-    field: 'uuid',
-  },
-  ownerUuid: {
-    type: Sequelize.UUID,
-    allowNull: false,
-    field: 'owner_uuid',
-  },
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    field: 'name',
-  },
-  originalFileName: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    field: 'original_file_name',
-  },
-  type: {
-    type: Sequelize.ENUM('user_avatar', 'community_avatar', 'post_attachment'),
-    allowNull: false,
-    field: 'type',
-  },
-  shortDesc: {
-    type: Sequelize.STRING,
-    field: 'short_desc',
-  },
-}, {
-  paranoid: true,
-  underscored: true,
-  freezeTableName: true,
-  tableName: 'uploads',
-});
-
-export default Upload;
+  return Upload;
+};

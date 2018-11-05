@@ -117,12 +117,6 @@ const items = [
     role: 'guest',
   },
   {
-    communityUuid: '6c52e508-d6a6-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
-    status: 'approved',
-    role: 'moderator',
-  },
-  {
     communityUuid: '6c52e63e-d6a6-11e8-9f8b-f2801f1b9fd1',
     userUuid: '33467fee-d69d-11e8-9f8b-f2801f1b9fd1',
     status: 'approved',
@@ -132,18 +126,6 @@ const items = [
     communityUuid: '6c52e63e-d6a6-11e8-9f8b-f2801f1b9fd1',
     userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     status: 'approved',
-    role: 'member',
-  },
-  {
-    communityUuid: '6c52e63e-d6a6-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467ba2-d69d-11e8-9f8b-f2801f1b9fd1',
-    status: 'approved',
-    role: 'member',
-  },
-  {
-    communityUuid: '6c52e63e-d6a6-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
-    status: 'banned',
     role: 'member',
   },
 ];

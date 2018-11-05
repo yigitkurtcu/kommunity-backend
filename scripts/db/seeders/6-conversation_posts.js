@@ -4,7 +4,7 @@ import bulkPromise from '../utils/bulk-promise';
 const items = [
   {
     uuid: '1749067c-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: null,
     communityUuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -14,7 +14,7 @@ const items = [
   },
   {
     uuid: '1749091a-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '1749067c-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -24,7 +24,7 @@ const items = [
   },
   {
     uuid: '17490a78-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '1749067c-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -34,7 +34,7 @@ const items = [
   },
   {
     uuid: '17490bae-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '33467a44-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '17490a78-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -44,7 +44,7 @@ const items = [
   },
   {
     uuid: '17490ce4-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '17490bae-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -54,7 +54,7 @@ const items = [
   },
   {
     uuid: '17490e1a-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: null,
     communityUuid: '6c52debe-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310g93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -64,7 +64,7 @@ const items = [
   },
   {
     uuid: '1749102c-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467fee-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '33467fee-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '17490e1a-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52debe-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310g93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -74,7 +74,7 @@ const items = [
   },
   {
     uuid: '17491176-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: '17490e1a-d78d-11e8-9f8b-f2801f1b9fd1',
     communityUuid: '6c52debe-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '310g93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -84,7 +84,7 @@ const items = [
   },
   {
     uuid: '174913e2-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467ba2-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '33467ba2-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: null,
     communityUuid: '6c52e274-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '311f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
@@ -94,7 +94,7 @@ const items = [
   },
   {
     uuid: '174915c2-d78d-11e8-9f8b-f2801f1b9fd1',
-    userUuid: '33467ba2-d69d-11e8-9f8b-f2801f1b9fd1',
+    authorUuid: '33467ba2-d69d-11e8-9f8b-f2801f1b9fd1',
     parentUuid: null,
     communityUuid: '6c52e3c8-d6a6-11e8-9f8b-f2801f1b9fd1',
     categoryUuid: '320f93c8-d76a-11e8-9f8b-f2801f1b9fd1',

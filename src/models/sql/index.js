@@ -1,15 +1,28 @@
-import Community from './community';
-import CommunityUser from './community-user';
-import ConversationCategory from './conversation-category';
-import ConversationPost from './conversation-post';
-import Upload from './upload';
-import User from './user';
+import fs from 'fs';
+import path from 'path';
+import Sequelize from 'sequelize';
+import { sequelize } from '../../clients/sequelize';
 
-export {
-  Community,
-  CommunityUser,
-  ConversationCategory,
-  ConversationPost,
-  Upload,
-  User,
-};
+const basename = path.basename(__filename);
+const db = {};
+
+fs
+  .readdirSync(__dirname)
+  .filter((file) => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach((file) => {
+    const model = sequelize.import(path.join(__dirname, file));
+    db[model.name] = model;
+  });
+
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
