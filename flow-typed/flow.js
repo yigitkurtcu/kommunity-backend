@@ -14,10 +14,6 @@ declare module 'lodash' {
   declare module.exports: any;
 }
 
-declare module 'sequelize' {
-  declare module.exports: any;
-}
-
 declare module 'express' {
   declare module.exports: any;
 }

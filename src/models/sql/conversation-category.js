@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
   const ConversationCategory = sequelize.define('ConversationCategory', {
     uuid: {
       type: DataTypes.UUID,

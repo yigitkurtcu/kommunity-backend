@@ -4,7 +4,7 @@ import Sequelize from 'sequelize';
 import { sequelize } from '../../clients/sequelize';
 
 const basename = path.basename(__filename);
-const db = {};
+const db: exportedSequelizeModels = {};
 
 fs
   .readdirSync(__dirname)
