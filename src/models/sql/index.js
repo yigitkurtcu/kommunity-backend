@@ -4,7 +4,16 @@ import Sequelize from 'sequelize';
 import { sequelize } from '../../clients/sequelize';
 
 const basename = path.basename(__filename);
-const db: exportedSequelizeModels = {};
+const db: exportedSequelizeModels = {
+  sequelize: undefined,
+  Sequelize: undefined,
+  CommunityUser: undefined,
+  Community: undefined,
+  ConversationCategory: undefined,
+  ConversationPost: undefined,
+  Upload: undefined,
+  User: undefined,
+};
 
 fs
   .readdirSync(__dirname)
@@ -17,8 +26,10 @@ fs
   });
 
 Object.keys(db).forEach((modelName) => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
+  if (modelName !== 'sequelize' && modelName !== 'Sequelize') {
+    if (db[modelName].associate) {
+      db[modelName].associate(db);
+    }
   }
 });
 

@@ -1,24 +1,26 @@
-module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
+import Sequelize, { type DataTypes } from 'sequelize';
+
+module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
   const CommunityUser = sequelize.define('CommunityUser', {
     communityUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       primaryKey: true,
       field: 'community_uuid',
     },
     userUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       primaryKey: true,
       field: 'user_uuid',
     },
     status: {
-      type: DataTypes.ENUM('invited', 'applied', 'approved', 'banned'),
+      type: dataTypes.ENUM('invited', 'applied', 'approved', 'banned'),
       allowNull: false,
       field: 'status',
     },
     role: {
-      type: DataTypes.ENUM('guest', 'member', 'moderator', 'admin', 'owner'),
+      type: dataTypes.ENUM('guest', 'member', 'moderator', 'admin', 'owner'),
       allowNull: false,
       field: 'role',
     },

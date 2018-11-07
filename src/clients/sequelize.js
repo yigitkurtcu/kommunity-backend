@@ -18,5 +18,5 @@ export const sequelize = new Sequelize(database, username, password, {
   },
 
   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
-  operatorsAliases: false,
+  operatorsAliases: true,
 });

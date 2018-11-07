@@ -1,42 +1,44 @@
-module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
+import Sequelize, { type DataTypes } from 'sequelize';
+
+module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
   const ConversationPost = sequelize.define('ConversationPost', {
     uuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       primaryKey: true,
       allowNull: false,
       field: 'uuid',
     },
     authorUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       field: 'author_uuid',
     },
     parentUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       field: 'parent_uuid',
     },
     communityUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       field: 'community_uuid',
     },
     categoryUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       field: 'category_uuid',
     },
     content: {
-      type: DataTypes.TEXT,
+      type: dataTypes.TEXT,
       allowNull: false,
       field: 'content',
     },
     viewCount: {
-      type: DataTypes.INTEGER,
+      type: dataTypes.INTEGER,
       defaultValue: 0,
       field: 'view_count',
     },
     attachmentUploadUuids: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'attachment_upload_uuids',
     },
   }, {

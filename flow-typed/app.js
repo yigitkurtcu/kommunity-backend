@@ -3,5 +3,12 @@ declare type app$User = {
 };
 
 declare type exportedSequelizeModels = {
-  User: object,
+  sequelize: any,
+  Sequelize: any,
+  CommunityUser: any,
+  Community: any,
+  ConversationCategory: any,
+  ConversationPost: any,
+  Upload: any,
+  User: any
 };

@@ -1,47 +1,49 @@
-module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
+import Sequelize, { type DataTypes } from 'sequelize';
+
+module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
   const User = sequelize.define('User', {
     uuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       primaryKey: true,
       allowNull: false,
       field: 'uuid',
     },
     email: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'email',
     },
     passwordHash: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'password_hash',
     },
     firstName: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'first_name',
     },
     lastName: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'last_name',
     },
     userAttributes: {
-      type: DataTypes.TEXT('long'),
+      type: dataTypes.TEXT('long'),
       field: 'user_attributes',
     },
     location: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'location',
     },
     avatarUploadUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       field: 'avatar_upload_uuid',
     },
     lastSeenAt: {
-      type: DataTypes.DATE,
+      type: dataTypes.DATE,
       field: 'last_seen_at',
     },
     confirmedEmailAt: {
-      type: DataTypes.DATE,
+      type: dataTypes.DATE,
       field: 'confirmed_email_at',
     },
   }, {

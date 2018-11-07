@@ -5,9 +5,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon src/server.js --exec babel-node",
     "watch": "cross-env NODE_ENV=development npm start",
-
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
-
     "check-travis": "cross-env NODE_ENV=test run-s -nl lint flow cover",
     "test": "cross-env NODE_ENV=test jest --config .jest.json --forceExit",
     "cover": "jest --coverage --config .jest.json --forceExit",
@@ -16,7 +14,6 @@
     "flow": "flow check --include-warnings",
     "flow-coverage": "flow coverage --color",
     "flow-typed-add": "flow-typed install",
-
     "db-setup": "cross-env NODE_ENV=development npm run db-setup-dev",
     "db-setup-dev": "sequelize db:create && babel-node scripts/db/dev-db-setup.js && sequelize db:migrate && sequelize db:seed:all"
   },

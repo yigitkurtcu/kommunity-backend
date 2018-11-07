@@ -1,50 +1,52 @@
-module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
+import Sequelize, { type DataTypes } from 'sequelize';
+
+module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
   const Community = sequelize.define('Community', {
     uuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       primaryKey: true,
       allowNull: false,
       field: 'uuid',
     },
     name: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'name',
     },
     tagline: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'tagline',
     },
     desc: {
-      type: DataTypes.TEXT,
+      type: dataTypes.TEXT,
       allowNull: false,
       field: 'desc',
     },
     location: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'location',
     },
     socialLinks: {
-      type: DataTypes.TEXT('long'),
+      type: dataTypes.TEXT('long'),
       field: 'social_links',
     },
     avatarUploadUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       field: 'avatar_upload_uuid',
     },
     tier: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'tier',
     },
     visibility: {
-      type: DataTypes.ENUM('public', 'private', 'secret'),
+      type: dataTypes.ENUM('public', 'private', 'secret'),
       allowNull: false,
       defaultValue: 'public',
       field: 'visibility',
     },
     isActive: {
-      type: DataTypes.BOOLEAN,
+      type: dataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true,
       field: 'is_active',

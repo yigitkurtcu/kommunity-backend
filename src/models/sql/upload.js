@@ -1,33 +1,35 @@
-module.exports = (sequelize: Sequelize, DataTypes: DataTypes) => {
+import Sequelize, { type DataTypes } from 'sequelize';
+
+module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
   const Upload = sequelize.define('Upload', {
     uuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       primaryKey: true,
       allowNull: false,
       field: 'uuid',
     },
     ownerUuid: {
-      type: DataTypes.UUID,
+      type: dataTypes.UUID,
       allowNull: false,
       field: 'owner_uuid',
     },
     name: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'name',
     },
     originalFileName: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false,
       field: 'original_file_name',
     },
     type: {
-      type: DataTypes.ENUM('user_avatar', 'community_avatar', 'post_attachment'),
+      type: dataTypes.ENUM('user_avatar', 'community_avatar', 'post_attachment'),
       allowNull: false,
       field: 'type',
     },
     shortDesc: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       field: 'short_desc',
     },
   }, {

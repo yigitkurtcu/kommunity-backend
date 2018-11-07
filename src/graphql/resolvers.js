@@ -1,6 +1,5 @@
-import Sequelize from 'sequelize';
 import { sequelize } from '../clients/sequelize';
-import { Community, CommunityUser } from '../models/sql';
+import { Community, CommunityUser, User } from '../models/sql';
 
 export default {
   Query: {
@@ -15,18 +14,20 @@ export default {
       });
       const uuids = popularCommunities.map(community => community.community_uuid);
       return Community.findAll({
+        include: [{ model: User }],
         where: {
           uuid: {
-            [Sequelize.Op.in]: uuids,
+            $in: uuids,
           },
         },
       });
     },
 
     searchCommunities: (obj: {}, args: {name: string}) => Community.findAll({
+      include: [{ model: User }],
       where: {
         name: {
-          [Sequelize.Op.like]: `%${args.name}%`,
+          $like: `%${args.name}%`,
         },
       },
     }),
