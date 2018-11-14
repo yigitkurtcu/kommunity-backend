@@ -7,7 +7,6 @@
 [include]
 
 [libs]
-flow-typed
 
 [lints]
 all=error
