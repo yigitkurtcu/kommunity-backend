@@ -1,7 +1,7 @@
 
 import { type Options as SequelizeOptions } from "sequelize";
 
-declare module '$../scripts/app/config' {
+declare module '$/../scripts/app/config' {
   declare module.exports: any;
 }
 declare module '$/lib/App' {
