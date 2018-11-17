@@ -1,5 +1,5 @@
 
-import type App from '$/lib/app';
+import type App from '$/lib/App';
 
 const routes = (app: App): express$Router => {
   const rootPath: string = '/';

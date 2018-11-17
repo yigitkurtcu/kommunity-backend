@@ -1,5 +1,5 @@
 import http from 'http';
-import App from '$/lib/app';
+import App from '$/lib/App';
 
 const server: App = require('$/app').appServer;
 
