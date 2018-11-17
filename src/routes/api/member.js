@@ -1,8 +1,8 @@
 import uuid from 'uuid';
 import md5 from 'md5';
-import authenticationMiddleware from '$/middlewares/auth';
-import type App from '$/lib/App';
-import { generateTokenForUser } from '$/lib/helpers';
+import authenticationMiddleware from '../../middlewares/auth';
+import type App from '../../lib/App';
+import { generateTokenForUser } from '../../lib/helpers';
 
 const routes = (app: App): express$Router => {
   const rootPath: string = '/api/v1/member';

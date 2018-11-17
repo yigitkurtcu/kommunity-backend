@@ -2,19 +2,19 @@ import * as http from 'http';
 import type { Server } from 'http';
 import path from 'path';
 import Express from 'express';
+import Sequelize from 'sequelize';
+import { ApolloServer } from 'apollo-server-express';
 import Cors from 'cors';
 import CookieParser from 'cookie-parser';
 import Morgan from 'morgan';
 import Passport from 'passport';
 import type { Sentry } from '@sentry/node';
 import { getAllFiles } from './helpers';
-import Sequelize from 'sequelize';
 import DbClient, { importModels } from './db-client';
-import { ApolloServer } from 'apollo-server-express';
 
-import authenticationMiddleware from '$/middlewares/auth';
-import { getTypeDefs } from '$/graphql/type-defs';
-import { getResolvers } from '$/graphql/resolvers';
+import authenticationMiddleware from '../middlewares/auth';
+import { getTypeDefs } from '../graphql/type-defs';
+import { getResolvers } from '../graphql/resolvers';
 
 
 export default class App {

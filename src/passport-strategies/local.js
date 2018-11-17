@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import md5 from 'md5';
 import { Strategy as LocalStrategy } from 'passport-local';
-import type App from '$/lib/App';
+import type App from '../lib/App';
 
 const Sentry = require('@sentry/node');
 
