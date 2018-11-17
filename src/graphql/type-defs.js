@@ -1,7 +1,6 @@
 import { gql } from 'apollo-server-express';
-// import type App from '$/../lib/App';
 
-export const getTypeDefs = (/* app: App */) => {
+export const getTypeDefs = () => {
   return gql`
     type User {
       email: String

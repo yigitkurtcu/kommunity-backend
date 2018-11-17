@@ -9,7 +9,6 @@
     "flowtype/no-types-missing-file-annotation": 0,
     "max-len": [2, {"code": 120, "ignoreUrls": true}],
     "arrow-body-style": 0,
-    "import/named": 0,
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
     "no-console": 2

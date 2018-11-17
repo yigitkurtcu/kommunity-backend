@@ -1,3 +1,6 @@
+// flow-typed signature: db1dcdfdce113dc4528154ce273fab6a
+// flow-typed version: bb849ae672/express_v4.16.x/flow_>=v0.32.x
+
 import * as http from "http";
 import type { Socket } from "net";
 
@@ -18,6 +21,7 @@ declare type express$RequestParams = {
 
 declare class express$Request extends http$IncomingMessage mixins express$RequestResponseBase {
   baseUrl: string;
+  body: mixed;
   cookies: { [cookie: string]: string };
   connection: Socket;
   fresh: boolean;
@@ -44,13 +48,6 @@ declare class express$Request extends http$IncomingMessage mixins express$Reques
   header(field: string): string | void;
   is(type: string): boolean;
   param(name: string, defaultValue?: string): string | void;
-
-  // Community flow-typed custom methods
-  // body: mixed;
-  body: any;
-  user: AppUser;
-  logout: () => void;
-  isAuthenticated: () => boolean;
 }
 
 declare type express$CookieOptions = {

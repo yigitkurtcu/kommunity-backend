@@ -1,15 +1,15 @@
 import Util from 'util';
 import { get } from 'lodash';
 import Strategy from 'passport-strategy';
-import type App from '$/../lib/App';
-import { getUserFromToken } from '$/../lib/Helpers';
+import type App from '$/lib/app';
+import { getUserFromToken } from '$/lib/helpers';
 
 const JwtStrategy = function JwtStrategy(secret: string) {
   Strategy.call(this);
   this.name = 'jwt';
   this.secret = secret;
 };
-JwtStrategy.prototype.authenticate = function authenticate(req: express$Request) {
+JwtStrategy.prototype.authenticate = function authenticate(req: exExpress$Request) {
   const token = get(req, 'body.token') || req.headers.authorization;
   return getUserFromToken(this.secret, token, (err, user) => {
     if (err) {

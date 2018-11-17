@@ -1,4 +1,4 @@
-import { getAllFiles } from '../../../lib/Helpers';
+import { getAllFiles } from '$/lib/helpers';
 import path from 'path';
 
 module.exports = {

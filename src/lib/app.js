@@ -7,9 +7,9 @@ import CookieParser from 'cookie-parser';
 import Morgan from 'morgan';
 import Passport from 'passport';
 import type { Sentry } from '@sentry/node';
-import { getAllFiles } from './Helpers';
+import { getAllFiles } from './helpers';
 import Sequelize from "sequelize";
-import DbClient, { importModels } from './DbClient';
+import DbClient, { importModels } from './db-client';
 import { ApolloServer } from 'apollo-server-express';
 
 import authenticationMiddleware from '$/middlewares/auth';
@@ -127,7 +127,7 @@ export default class App {
     this._initGqlServer();
 
     // eslint-disable-next-line
-    this.express.use((req: express$Request, res: express$Response, next: express$NextFunction) => {
+    this.express.use((req: exExpress$Request, res: express$Response, next: express$NextFunction) => {
       res.statusCode = 404;
       res.json({ message: 'not_found' });
     });
@@ -137,7 +137,7 @@ export default class App {
 
     // Optional fallthrough error handler
     // eslint-disable-next-line
-    this.express.use((err: Error, req: express$Request, res: express$Response, next: express$NextFunction) => {
+    this.express.use((err: Error, req: exExpress$Request, res: express$Response, next: express$NextFunction) => {
       res.statusCode = 500;
       // eslint-disable-next-line no-underscore-dangle
       res.json({ message: 'internal_error', eventId: sentry.getCurrentHub()._lastEventId });
@@ -175,11 +175,11 @@ export default class App {
   _initGqlServer = (): void => {
     const that = this;
     const serverConf = {
-      typeDefs: getTypeDefs(/* this */),
+      typeDefs: getTypeDefs(),
       resolvers: getResolvers(this),
     };
 
-    this.express.use((req: express$Request, res: express$Response, next: express$NextFunction) => {
+    this.express.use((req: exExpress$Request, res: express$Response, next: express$NextFunction) => {
       if (req.path === that.config.gqlServer.rootPath) {
         return authenticationMiddleware(req, res, next);
       }

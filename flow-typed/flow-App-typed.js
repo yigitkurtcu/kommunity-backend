@@ -55,3 +55,12 @@ declare type AppModels = {
   ConversationPost: any,
   Upload: any
 };
+
+declare class exExpress$Request extends express$Request {
+  // Community flow-typed custom methods
+  // body: mixed;
+  body: any;
+  user: AppUser;
+  logout: () => void;
+  isAuthenticated: () => boolean;
+}

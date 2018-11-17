@@ -1,6 +1,6 @@
 import path from "path";
 import Sequelize from "sequelize";
-import DbClient, { importModels } from '../../lib/DbClient';
+import DbClient, { importModels } from '$/lib/db-client';
 
 
 const appConfig: AppConfig = require('$/../scripts/app/config');

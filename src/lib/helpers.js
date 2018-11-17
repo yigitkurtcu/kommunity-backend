@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import jwt from 'jsonwebtoken';
+import jwt, { type VerifyCallback } from 'jsonwebtoken';
 
 export const getAllFiles = function(folderPath: string, filelist: Array <string>) {
   const items: Array <string> = fs.readdirSync(folderPath);
@@ -17,12 +17,13 @@ export const getAllFiles = function(folderPath: string, filelist: Array <string>
 };
 
 export const getUserFromToken = (secret: string, token: string, done: (err: boolean, token: ?string) => void) => {
-  jwt.verify(token, secret, (err: Error, decodedObject) => {
+  const cb: VerifyCallback = (err, decodedObject) => {
     if (err) {
       return done(true);
     }
     return done(false, decodedObject.user);
-  });
+  }
+  jwt.verify(token, secret, cb);
 };
 
 export const generateTokenForUser = (secret: string, user: {}) => {

@@ -1,6 +1,6 @@
 import path from 'path';
 import Sequelize, { type Options as SequelizeOptions } from "sequelize";
-import { getAllFiles } from './Helpers';
+import { getAllFiles } from './helpers';
 
 export default (sequelizeOptions: SequelizeOptions): Sequelize => {
   return new Sequelize(sequelizeOptions);

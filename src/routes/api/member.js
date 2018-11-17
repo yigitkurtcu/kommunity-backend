@@ -1,18 +1,18 @@
 import uuid from 'uuid';
 import md5 from 'md5';
 import authenticationMiddleware from '$/middlewares/auth';
-import type App from '$/../lib/App';
-import { generateTokenForUser } from '$/../lib/Helpers';
+import type App from '$/lib/app';
+import { generateTokenForUser } from '$/lib/helpers';
 
 const routes = (app: App): express$Router => {
   const rootPath: string = '/api/v1/member';
   const router: express$Router = app.createRouter();
 
-  router.get('/me', authenticationMiddleware, (req: express$Request, res: express$Response) => {
+  router.get('/me', authenticationMiddleware, (req: exExpress$Request, res: express$Response) => {
     return res.json(req.user);
   });
 
-  router.post('/signup', (req: express$Request, res: express$Response) => {
+  router.post('/signup', (req: exExpress$Request, res: express$Response) => {
     const { email, password } = req.body;
     // TODO handle error, transform response
     app.models.User.create({
@@ -29,7 +29,7 @@ const routes = (app: App): express$Router => {
     });
   });
 
-  router.post('/login', authenticationMiddleware, (req: express$Request, res: express$Response) => {
+  router.post('/login', authenticationMiddleware, (req: exExpress$Request, res: express$Response) => {
     const { user } = req;
     return res.json({
       user,
@@ -37,7 +37,7 @@ const routes = (app: App): express$Router => {
     });
   });
 
-  router.post('/logout', authenticationMiddleware, (req: express$Request, res: express$Response) => {
+  router.post('/logout', authenticationMiddleware, (req: exExpress$Request, res: express$Response) => {
     req.logout();
     res.json({ success: true });
   });

@@ -1,3 +1,8 @@
+// flow-typed signature: d20e0a7378c4dbf265e42ed40cd36c08
+// flow-typed version: 03c38d65cd/sequelize_v4.x.x/flow_>=v0.42.x
+
+// @flow
+
 declare module "sequelize" {
   /**
    * The options for the getAssociation mixin of the belongsTo association.
@@ -14,8 +19,11 @@ declare module "sequelize" {
   /**
    * The getAssociation mixin applied to models with belongsTo.
    * An example of usage is as follows
+
   ```js
+
   User.belongsTo(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttrib>, UserAttrib {
     getRole: BelongsToGetOne<RoleInstance>;
     // setRole...
@@ -49,8 +57,11 @@ declare module "sequelize" {
   /**
    * The setAssociation mixin applied to models with belongsTo.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsTo(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRole...
     setRole: BelongsToSetOne<RoleInstance, RoleId>;
@@ -79,8 +90,11 @@ declare module "sequelize" {
   /**
    * The createAssociation mixin applied to models with belongsTo.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsTo(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRole...
     // setRole...
@@ -115,8 +129,11 @@ declare module "sequelize" {
   /**
    * The getAssociation mixin applied to models with hasOne.
    * An example of usage is as follows:
+
   ```js
+
   User.hasOne(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttrib>, UserAttrib {
     getRole: HasOneGetOne<RoleInstance>;
     // setRole...
@@ -150,8 +167,11 @@ declare module "sequelize" {
   /**
    * The setAssociation mixin applied to models with hasOne.
    * An example of usage is as follows:
+
   ```js
+
   User.hasOne(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRole...
     setRole: HasOneSetOne<RoleInstance, RoleId>;
@@ -181,8 +201,11 @@ declare module "sequelize" {
   /**
    * The createAssociation mixin applied to models with hasOne.
    * An example of usage is as follows:
+
   ```js
+
   User.hasOne(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRole...
     // setRole...
@@ -222,8 +245,11 @@ declare module "sequelize" {
   /**
    * The getAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     getRoles: HasManyGetMany<RoleInstance>;
     // setRoles...
@@ -264,8 +290,11 @@ declare module "sequelize" {
   /**
    * The setAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     setRoles: HasManySetMany<RoleInstance, RoleId>;
@@ -308,8 +337,11 @@ declare module "sequelize" {
   /**
    * The addAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -351,8 +383,11 @@ declare module "sequelize" {
   /**
    * The addAssociation mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -389,8 +424,11 @@ declare module "sequelize" {
   /**
    * The createAssociation mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -427,8 +465,11 @@ declare module "sequelize" {
   /**
    * The removeAssociation mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -465,8 +506,11 @@ declare module "sequelize" {
   /**
    * The removeAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -503,8 +547,11 @@ declare module "sequelize" {
   /**
    * The hasAssociation mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -541,8 +588,11 @@ declare module "sequelize" {
   /**
    * The removeAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -589,8 +639,11 @@ declare module "sequelize" {
   /**
    * The countAssociations mixin applied to models with hasMany.
    * An example of usage is as follows:
+
   ```js
+
   User.hasMany(Role);
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -636,8 +689,11 @@ declare module "sequelize" {
   /**
    * The getAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     getRoles: BelongsToManyGetMany<RoleInstance>;
     // setRoles...
@@ -678,8 +734,11 @@ declare module "sequelize" {
   /**
    * The setAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     setRoles: BelongsToManySetMany<RoleInstance, RoleId, UserRoleAttributes>;
@@ -729,8 +788,11 @@ declare module "sequelize" {
   /**
    * The addAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -779,8 +841,11 @@ declare module "sequelize" {
   /**
    * The addAssociation mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -824,8 +889,11 @@ declare module "sequelize" {
   /**
    * The createAssociation mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -864,8 +932,11 @@ declare module "sequelize" {
   /**
    * The removeAssociation mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -902,8 +973,11 @@ declare module "sequelize" {
   /**
    * The removeAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -940,8 +1014,11 @@ declare module "sequelize" {
   /**
    * The hasAssociation mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -978,8 +1055,11 @@ declare module "sequelize" {
   /**
    * The removeAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -1026,8 +1106,11 @@ declare module "sequelize" {
   /**
    * The countAssociations mixin applied to models with belongsToMany.
    * An example of usage is as follows:
+
   ```js
+
   User.belongsToMany(Role, { through: UserRole });
+
   interface UserInstance extends Model<UserInstance, UserAttributes>, UserAttributes {
     // getRoles...
     // setRoles...
@@ -1076,6 +1159,7 @@ declare module "sequelize" {
      * For example if `User.hasOne(Profile, {onDelete: 'cascade', hooks:true})`, the before-/afterDestroy hooks
     for profile will be called when a user is deleted. Otherwise the profile will be deleted without invoking
     any hooks.
+
     Defaults to false
     */
     hooks?: boolean,
@@ -1103,6 +1187,7 @@ declare module "sequelize" {
      * What happens when delete occurs.
      *
     Cascade if this is a n:m, and set null if it is a 1:m
+
     Defaults to 'SET_NULL' or 'CASCADE'
     */
     onDelete?: string,
@@ -1200,6 +1285,7 @@ declare module "sequelize" {
      * The name of the table that is used to join source and target in n:m associations. Can also be a
      * sequelize
     model if you want to define the junction table yourself and add extra attributes to it.
+
     In 3.4.1 version of Sequelize, hasMany's use of through gives an error, and on the other hand through
     option for belongsToMany has been made required.
      * @see  https://github.com/sequelize/sequelize/blob/v3.4.1/lib/associations/has-many.js
@@ -1242,6 +1328,7 @@ declare module "sequelize" {
     /**
      * If true a unique key will be generated from the foreign keys used (might want to turn this off and create
      * specific unique keys when using scopes)
+
     Defaults to true
     */
     unique?: boolean
@@ -1645,6 +1732,7 @@ declare module "sequelize" {
    * A convenience class holding commonly used data types. The datatypes are used when definining a new model
    * using
   `Sequelize.define`, like this:
+
   ```js
   sequelize.define('model', {
   column: DataTypes.INTEGER
@@ -1654,14 +1742,18 @@ declare module "sequelize" {
   is
   beneficial. For example, using `DataTypes.BLOB`, mean that that column will be returned as an instance of
   `Buffer` when being fetched by sequelize.
+
   Some data types have special properties that can be accessed in order to change the data type.
   For example, to get an unsigned integer with zerofill you can do `DataTypes.INTEGER.UNSIGNED.ZEROFILL`.
   The order you access the properties in do not matter, so `DataTypes.INTEGER.ZEROFILL.UNSIGNED` is fine as
   well. The available properties are listed under each data type.
+
   To provide a length for the data type, you can invoke it like a function: `INTEGER(2)`
+
   Three of the values provided here (`NOW`, `UUIDV1` and `UUIDV4`) are special default values, that should not
   be used to define types. Instead they are used as shorthands for defining default values. For example, to
   get a uuid field with a default value generated following v1 of the UUID standard:
+
   ```js
   sequelize.define('model', {
   uuid: {
@@ -1769,8 +1861,10 @@ declare module "sequelize" {
    * A collection of properties related to deferrable constraints. It can be used to
    * make foreign key constraints deferrable and to set the constaints within a
   transaction. This is only supported in PostgreSQL.
+
   The foreign keys can be configured like this. It will create a foreign key
   that will check the constraints immediately when the data was inserted.
+
   ```js
   sequelize.define('Model', {
      foreign_id: {
@@ -1783,9 +1877,11 @@ declare module "sequelize" {
      }
   });
   ```
+
   The constraints can be configured in a transaction like this. It will
   trigger a query once the transaction has been started and set the constraints
   to be checked at the very end of the transaction.
+
   ```js
   sequelize.transaction({
   deferrable: Sequelize.Deferrable.SET_DEFERRED
@@ -1994,6 +2090,7 @@ declare module "sequelize" {
   /**
    * Options for Sequelize.define. We mostly duplicate the Hooks here, since there is no way to combine the two
    * interfaces.
+
   beforeValidate, afterValidate, beforeBulkCreate, beforeBulkDestroy, beforeBulkUpdate, beforeCreate,
   beforeDestroy, beforeUpdate, afterCreate, afterDestroy, afterUpdate, afterBulkCreate, afterBulkDestroy and
   afterBulkUpdate.
@@ -2760,6 +2857,7 @@ declare module "sequelize" {
     /**
      * Only used in conjuction with TRUNCATE. Truncates  all tables that have foreign-key references to the
      * named table, or to any tables added to the group due to CASCADE.
+
     Defaults to false;
     */
     cascade?: boolean,
@@ -2872,6 +2970,7 @@ declare module "sequelize" {
     /**
      * Run before / after update hooks?. If true, this will execute a SELECT followed by individual UPDATEs.
      * A select is needed, because the row data needs to be passed to the hooks
+
      Defaults to false
      */
     individualHooks?: boolean,
@@ -2919,6 +3018,7 @@ declare module "sequelize" {
     /**
      * Run before / after update hooks?. If true, this will execute a SELECT followed by individual UPDATEs.
      * A select is needed, because the row data needs to be passed to the hooks
+
     Defaults to false
     */
     individualHooks?: boolean,
@@ -2982,7 +3082,6 @@ declare module "sequelize" {
   already created models can be loaded using `sequelize.import`
   */
   declare export class Model<TAttributes, TInitAttributes = TAttributes, TPlainAttributes = TAttributes> {
-
     static init(attributes: DefineAttributes, options: DefineOptions<this>): this,
 
     static QueryInterface: QueryInterface,
@@ -3088,6 +3187,7 @@ declare module "sequelize" {
     Model.findAll() // WHERE username = 'dan'
     Model.findAll({ where: { age: { gt: 12 } } }) // WHERE age>12 AND username = 'dan'
     ```
+
     To invoke scope functions you can do:
     ```js
     Model.scope({ method: ['complexFunction' 'dan@sequelize.com', 42]}).findAll()
@@ -3114,8 +3214,10 @@ declare module "sequelize" {
     ```sql
     WHERE attr1 = 42 AND attr2 = 'cake'
     ```
+
     __Using greater than, less than etc.__
     ```js
+
     Model.findAll({
        where: {
        attr1: {
@@ -3138,6 +3240,7 @@ declare module "sequelize" {
     ```
     Possible options are: `$ne, $in, $not, $notIn, $gte, $gt, $lte, $lt, $like, $ilike/$iLike, $notLike,
     $notILike, '..'/$between, '!..'/$notBetween, '&&'/$overlap, '@>'/$contains, '<@'/$contained`
+
     __Queries using OR__
     ```js
     Model.findAll({
@@ -3153,6 +3256,7 @@ declare module "sequelize" {
     ```sql
     WHERE name = 'a project' AND (id` IN (1,2,3) OR id>10)
     ```
+
     The success listener is called with an array of instances if the query succeeds.
      * @see  {Sequelize#query}
     */
@@ -3204,6 +3308,7 @@ declare module "sequelize" {
     /**
      * Find all the rows matching your query, within a specified offset / limit, and get the total number of
      * rows matching your query. This is very usefull for paging
+
     ```js
     Model.findAndCountAll({
        where: ...,
@@ -3216,9 +3321,11 @@ declare module "sequelize" {
     In the above example, `result.rows` will contain rows 13 through 24, while `result.count` will return
     the
     total number of rows that matched your query.
+
     When you add includes, only those which are required (either because they have a where clause, or
     because
     `required` is explicitly set to true on the include) will be added to the count part.
+
     Suppose you want to find all users who have a profile attached:
     ```js
     User.findAndCountAll({
@@ -3286,6 +3393,7 @@ declare module "sequelize" {
     /**
      * Find a row that matches the query, or build and save the row if none is found
      * The successful result of the promise will be (instance, created) - Make sure to use .spread()
+
     If no transaction is passed in the `options` object, a new transaction will be created internally, to
     prevent the race condition where a matching row is created by another connection after the find but
     before the insert call. However, it is not always possible to handle this case in SQLite, specifically
@@ -3308,13 +3416,16 @@ declare module "sequelize" {
      * either the primary key or a unique key is found. Note that the unique index must be defined in your
     sequelize model and not just in the table. Otherwise you may experience a unique constraint violation,
     because sequelize fails to identify the row that should be updated.
+
     *Implementation details:*
+
     * MySQL - Implemented as a single query `INSERT values ON DUPLICATE KEY UPDATE values`
     * PostgreSQL - Implemented as a temporary function with exception handling: INSERT EXCEPTION WHEN
        unique_constraint UPDATE
     * SQLite - Implemented as two queries `INSERT; UPDATE`. This means that the update is executed
     regardless
        of whether the row already existed or not
+
     *Note* that SQLite returns undefined for created, no matter if the row was created or updated. This is
     because SQLite always runs INSERT OR IGNORE + UPDATE, in a single query, so there is no way to know
     whether the row was inserted or not.
@@ -3682,6 +3793,7 @@ declare module "sequelize" {
     /**
      * Creates an association between this (the source) and the provided target. The foreign key is added
      * on the target.
+
      Example: `User.hasOne(Profile)`. This will add userId to the profile table.
      * @param target The model that will be associated with hasOne relationship
      * @param options Options for the association
@@ -3693,6 +3805,7 @@ declare module "sequelize" {
     /**
      * Creates an association between this (the source) and the provided target. The foreign key is added on the
      * source.
+
      Example: `Profile.belongsTo(User)`. This will add userId to the profile table.
      * @param target The model that will be associated with hasOne relationship
      * @param options Options for the association
@@ -3730,14 +3843,17 @@ declare module "sequelize" {
      jan.setProjects([makedinner, doshopping], { started: true}) // Both shopping and dinner have been
      started
      ```
+
      If you want to set several target instances, but with different attributes you have to set the
      attributes on the instance, using a property with the name of the through model:
+
      ```js
      p1.userprojects {
          started: true
       }
      user.setProjects([p1, p2], {started: false}) // The default value is false, but p1 overrides that.
      ```
+
      Similarily, when fetching through a join table with custom attributes, these attributes will be
      available as an object with the name of the through model.
      ```js
@@ -3762,6 +3878,7 @@ declare module "sequelize" {
      ```
      By default, the name of the join table will be source+target, so in this case projectsusers. This can be
      overridden by providing either a string or a Model as `through` in the options.
+
      If you use a through model with custom attributes, these attributes can be set when adding / setting new
      associations in two ways. Consider users and projects from before with a join table that stores whether
      the project has been started yet:
@@ -3776,14 +3893,17 @@ declare module "sequelize" {
      jan.addProject(homework, { started: false }) // The homework project is not started yet
      jan.setProjects([makedinner, doshopping], { started: true}) // Both shopping and dinner has been started
      ```
+
      If you want to set several target instances, but with different attributes you have to set the
      attributes on the instance, using a property with the name of the through model:
+
      ```js
      p1.userprojects {
          started: true
       }
      user.setProjects([p1, p2], {started: false}) // The default value is false, but p1 overrides that.
      ```
+
      Similarily, when fetching through a join table with custom attributes, these attributes will be
      available as an object with the name of the through model.
      ```js
@@ -3872,14 +3992,18 @@ declare module "sequelize" {
      will update a value stored in the underlying `dataValues` object. However, if a custom setter function
      is defined for the key, that function will be called instead. To bypass the setter, you can pass `raw:
      true` in the options object.
+
      If set is called with an object, it will loop over the object, and call set recursively for each key,
      value pair. If you set raw to true, the underlying dataValues will either be set directly to the object
      passed, or used to extend dataValues, if dataValues already contain values.
+
      When set is called, the previous value of the field is stored and sets a changed flag(see `changed`).
+
      Set can also be used to build instances for associations, if you have values for those.
      When using set with associations you need to make sure the property key matches the alias of the
      association while also making sure that the proper include options have been set (from .build() or
      .find())
+
      If called with a dot.seperated key on a JSON/JSONB attribute it will set the value nested and flag the
      entire object as changed.
      * @param options .raw If set to true, field and virtual setters will be ignored
@@ -3893,7 +4017,9 @@ declare module "sequelize" {
     /**
      * If changed is called with a string it will return a boolean indicating whether the value of that key in
      * `dataValues` is different from the value in `_previousDataValues`.
+
      If changed is called without an argument, it will return an array of keys that have changed.
+
      If changed is called without an argument and no keys have changed, it will return `false`.
      */
     changed(key: $Keys<TAttributes>): boolean,
@@ -3964,6 +4090,7 @@ declare module "sequelize" {
      SET column = column + X
      ```
      query. To get the correct value after an increment into the Instance you should do a reload.
+
      ```js
      instance.increment('number') // increment number by 1
      instance.increment(['number', 'count'], { by: 2 }) // increment number and count by 2
@@ -3986,6 +4113,7 @@ declare module "sequelize" {
      SET column = column - X
      ```
      query. To get the correct value after an decrement into the Instance you should do a reload.
+
      ```js
      instance.decrement('number') // decrement number by 1
      instance.decrement(['number', 'count'], { by: 2 }) // decrement number and count by 2
@@ -4685,6 +4813,7 @@ declare module "sequelize" {
      * [dottie.js](https://github.com/mickhansen/dottie.js). For example { 'user.username': 'john' } becomes
     { user: { username: 'john' }}. When `nest` is true, the query type is assumed to be `'SELECT'`,
     unless otherwise specified
+
     Defaults to false
     */
     nest?: boolean,
@@ -4754,8 +4883,10 @@ declare module "sequelize" {
   /**
    * Model validations, allow you to specify format/content/inheritance validations for each attribute of the
    * model.
+
   Validations are automatically run on create, update and save. You can also call validate() to manually
   validate an instance.
+
   The validations are implemented by validator.js.
   */
   declare export type DefineValidateOptions = {
@@ -5834,6 +5965,7 @@ declare module "sequelize" {
     format
     +/-HH:MM. Will also accept string versions of timezones used by moment.js (e.g. 'America/Los_Angeles');
     this is useful to capture daylight savings time changes.
+
     Defaults to '+00:00'
     */
     timezone?: string,
@@ -5864,6 +5996,7 @@ declare module "sequelize" {
      * Write should be an object (a single server for handling writes), and read an array of object (several
     servers to handle reads). Each read/write server can have the following properties: `host`, `port`,
     `username`, `password`, `database`
+
     Defaults to false
     */
     replication?: ReplicationOptions,
@@ -5876,6 +6009,7 @@ declare module "sequelize" {
     /**
      * Run built in type validators on insert and update,
      * e.g. validate that arguments passed to integer fields are integer-like.
+
     Defaults to false
     */
     typeValidation?: boolean,
@@ -5888,6 +6022,7 @@ declare module "sequelize" {
     /**
      * Set to `false` to make table names and attributes case-insensitive on Postgres and skip double quoting of
      * them.
+
     Defaults to true
     */
     quoteIdentifiers?: boolean,
@@ -5895,6 +6030,7 @@ declare module "sequelize" {
     /**
      * Set the default transaction isolation level. See `Sequelize.Transaction.ISOLATION_LEVELS` for possible
      * options.
+
     Defaults to 'REPEATABLE_READ'
     */
     isolationLevel?: TransactionIsolationLevel,
@@ -5902,6 +6038,7 @@ declare module "sequelize" {
     /**
      * Set the default transaction type. See `Sequelize.Transaction.TYPES` for possible
      * options.
+
     Defaults to 'DEFERRED'
     */
     transactionType?: TransactionType,
@@ -5932,9 +6069,11 @@ declare module "sequelize" {
   /**
    * This is the main class, the entry point to sequelize. To use it, you just need to
    * import sequelize:
+
   ```js
   var Sequelize = require('sequelize');
   ```
+
   In addition to sequelize, the connection library for the dialect you want to use
   should also be installed in your project. You don't need to import it however, as
   sequelize will take care of that.
@@ -5995,6 +6134,7 @@ declare module "sequelize" {
      * order parts, and as default values in column definitions. If you want to refer to columns in your
      function, you should use `sequelize.col`, so that the columns are properly interpreted as columns and
      not a strings.
+
      Convert a user's username to upper case
      ```js
      instance.updateAttributes({
@@ -6067,6 +6207,7 @@ declare module "sequelize" {
      or
      `Model.rawAttributes.name`). The attribute should be defined in your model definition. The attribute can
      also be an object from one of the sequelize utility functions (`sequelize.fn`, `sequelize.col` etc.)
+
      For string attributes, use the regular `{ where: { attr: something }}` syntax. If you don't want your
      string to be escaped, use `sequelize.literal`.
      * @param attr The attribute, which can be either an attribute object from `Model.rawAttributes` or a
@@ -6752,6 +6893,7 @@ declare module "sequelize" {
     The table columns are define by the hash that is given as the second argument. Each attribute of the
     hash
     represents a column. A short table definition might look like this:
+
     ```js
     sequelize.define('modelName', {
        columnA: {
@@ -6770,18 +6912,24 @@ declare module "sequelize" {
        columnB: Sequelize.STRING,
        columnC: 'MY VERY OWN COLUMN TYPE'
     })
+
     sequelize.models.modelName // The model will now be available in models under the name given to define
     ```
+
     As shown above, column definitions can be either strings, a reference to one of the datatypes that are
     predefined on the Sequelize constructor, or an object that allows you to specify both the type of the
     column, and other attributes such as default values, foreign key constraints and custom setters and
     getters.
+
     For a list of possible data types, see
     http://docs.sequelizejs.com/en/latest/docs/models-definition/#data-types
+
     For more about getters and setters, see
     http://docs.sequelizejs.com/en/latest/docs/models-definition/#getters-setters
+
     For more about instance and class methods, see
     http://docs.sequelizejs.com/en/latest/docs/models-definition/#expansion-of-models
+
     For more about validation, see
     http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations
      * @param modelName The name of the model. The model will be stored in `sequelize.models` under this name
@@ -6812,6 +6960,7 @@ declare module "sequelize" {
      *
     Imported models are cached, so multiple calls to import with the same path will not load the file
     multiple times
+
     See https://github.com/sequelize/sequelize/blob/master/examples/using-multiple-model-files/Task.js for a
     short example of how to define your models in separate files so that they can be imported by
     sequelize.import
@@ -6831,12 +6980,15 @@ declare module "sequelize" {
      *
     By default, the function will return two arguments: an array of results, and a metadata object,
     containing number of affected rows etc. Use `.spread` to access the results.
+
     If you are running a type of query where you don't need the metadata, for example a `SELECT` query, you
     can pass in a query type to make sequelize format the results:
+
     ```js
     sequelize.query('SELECT...').spread(function (results, metadata) {
        // Raw query - use spread
     });
+
     sequelize.query('SELECT...', { type: sequelize.QueryTypes.SELECT }).then(function (results) {
        // SELECT query - use then
     })
@@ -6854,6 +7006,7 @@ declare module "sequelize" {
     /**
      * Execute a query which would set an environment or user variable. The variables are set per connection,
      * so this function needs a transaction.
+
     Only works for MySQL.
      * @param variables Object with multiple variables.
      * @param options Query options.
@@ -6954,6 +7107,7 @@ declare module "sequelize" {
     /**
      * Start a transaction. When using transactions, you should pass the transaction in the options argument
      * in order for the query to happen under that transaction
+
     ```js
     sequelize.transaction().then(function (t) {
        return User.find(..., { transaction: t}).then(function (user) {
@@ -6963,8 +7117,10 @@ declare module "sequelize" {
        .catch(t.rollback.bind(t));
     })
     ```
+
     A syntax for automatically committing or rolling back based on the promise chain resolution is also
     supported:
+
     ```js
     sequelize.transaction(function (t) { // Note that we use a callback rather than a promise.then()
        return User.find(..., { transaction: t}).then(function (user) {
@@ -6977,9 +7133,11 @@ declare module "sequelize" {
        console.error(err);
     });
     ```
+
     If you have [CLS](https://github.com/othiym23/node-continuation-local-storage) enabled, the transaction
     will automatically be passed to any query that runs witin the callback. To enable CLS, add it do your
     project, create a namespace and set it on the sequelize constructor:
+
     ```js
     var cls = require('continuation-local-storage'),
        ns = cls.createNamespace('....');
@@ -6999,6 +7157,7 @@ declare module "sequelize" {
     /**
      * Close all connections used by this sequelize instance, and free all references so the instance can be
      * garbage collected.
+
     Normally this is done on process exit, so you only need to call this method if you are creating multiple
     instances, and want to garbage collect some of them.
     */
@@ -7037,6 +7196,7 @@ declare module "sequelize" {
   /**
    * The transaction object is used to identify a running transaction. It is created by calling
    * `Sequelize.transaction()`.
+
   To run a query under a transaction, you should pass the transaction in the options object.
   */
   declare export class Transaction {
@@ -7055,7 +7215,9 @@ declare module "sequelize" {
      * `sequelize.transaction`. Default to `REPEATABLE_READ` but you can override the default isolation level
      by passing
      `options.isolationLevel` in `new Sequelize`.
+
      The possible isolations levels to use when starting a transaction:
+
      ```js
      {
         READ_UNCOMMITTED: "READ_UNCOMMITTED",
@@ -7064,12 +7226,16 @@ declare module "sequelize" {
         SERIALIZABLE: "SERIALIZABLE"
      }
      ```
+
      Pass in the desired level as the first argument:
+
      ```js
      return sequelize.transaction({
        isolationLevel: Sequelize.Transaction.SERIALIZABLE
     }, function (t) {
+
       // your transactions
+
     }).then(function(result) {
        // transaction has been committed. Do something after the commit if required.
     }).catch(function(err) {
@@ -7085,7 +7251,9 @@ declare module "sequelize" {
      * Transaction type can be set per-transaction by passing `options.type` to
      * `sequelize.transaction`. Default to `DEFERRED` but you can override the default isolation level
      by passing `options.transactionType` in `new Sequelize`.
+
      The transaction types to use when starting a transaction:
+
      ```js
      {
         DEFERRED: "DEFERRED",
@@ -7093,12 +7261,16 @@ declare module "sequelize" {
         EXCLUSIVE: "EXCLUSIVE"
      }
      ```
+
      Pass in the transaction type the first argument:
+
      ```js
      return sequelize.transaction({
        type: Sequelize.Transaction.EXCLUSIVE
     }, function (t) {
+
       // your transactions
+
     }).then(function(result) {
        // transaction has been committed. Do something after the commit if required.
     }).catch(function(err) {
@@ -7120,6 +7292,7 @@ declare module "sequelize" {
      t1.LOCK.KEY_SHARE, // Postgres 9.3+ only
      t1.LOCK.NO_KEY_UPDATE // Postgres 9.3+ only
      ```
+
      Usage:
      ```js
      t1 // is a transaction
@@ -7129,6 +7302,7 @@ declare module "sequelize" {
        lock: t1.LOCK...
     });
      ```
+
      Postgres also supports specific locks while eager loading by using OF:
      ```js
      UserModel.findAll({
