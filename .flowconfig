@@ -7,7 +7,7 @@
 [include]
 
 [libs]
-
+./src/lib
 [lints]
 all=error
 
