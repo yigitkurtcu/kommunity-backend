@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import md5 from 'md5';
 import authenticationMiddleware from '$/middlewares/auth';
-import type App from '$/lib/App';
+import type App from '$/lib/app';
 import { generateTokenForUser } from '$/lib/helpers';
 
 const routes = (app: App): express$Router => {

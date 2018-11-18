@@ -16,7 +16,6 @@ import authenticationMiddleware from '../middlewares/auth';
 import { getTypeDefs } from '../graphql/type-defs';
 import { getResolvers } from '../graphql/resolvers';
 
-
 export default class App {
   constructor(appConfig: AppConfig) {
     this.rootPath = path.resolve();

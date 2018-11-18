@@ -1,7 +1,7 @@
 import Util from 'util';
 import { get } from 'lodash';
 import Strategy from 'passport-strategy';
-import type App from '$/lib/App';
+import type App from '$/lib/app';
 import { getUserFromToken } from '$/lib/helpers';
 
 const JwtStrategy = function JwtStrategy(secret: string) {

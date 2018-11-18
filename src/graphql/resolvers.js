@@ -1,4 +1,4 @@
-import type App from '$/lib/App';
+import type App from '$/lib/app';
 
 export const getResolvers = (app: App) => {
   return {
