@@ -2,12 +2,13 @@
   "name": "community",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "8.11.4"
+  },
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon src/server.js --exec babel-node",
+    "start": "cross-env NODE_ENV=development nodemon src/app.js --exec babel-node",
     "watch": "cross-env NODE_ENV=development npm start",
-
-    "check-if-not-committed": "node scripts/check-if-not-committed.js",
-
+    "check-if-not-committed": "node scripts/git/check-if-not-committed.js",
     "check-travis": "cross-env NODE_ENV=test run-s -nl lint flow cover",
     "test": "cross-env NODE_ENV=test jest --config .jest.json --forceExit",
     "cover": "jest --coverage --config .jest.json --forceExit",
@@ -16,7 +17,6 @@
     "flow": "flow check --include-warnings",
     "flow-coverage": "flow coverage --color",
     "flow-typed-add": "flow-typed install",
-
     "db-setup": "cross-env NODE_ENV=development npm run db-setup-dev",
     "db-setup-dev": "sequelize db:create && babel-node scripts/db/dev-db-setup.js && sequelize db:migrate && sequelize db:seed:all"
   },
@@ -29,7 +29,6 @@
   "dependencies": {
     "@sentry/node": "^4.1.1",
     "apollo-server-express": "^2.1.0",
-    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "express": "~4.16.0",
@@ -41,6 +40,7 @@
     "md5": "^2.2.1",
     "morgan": "~1.9.0",
     "mysql2": "^1.6.1",
+    "npm": "^6.4.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
@@ -67,8 +67,5 @@
     "npm-run-all": "^4.1.3",
     "pre-push": "^0.1.1",
     "sequelize-cli": "^5.2.0"
-  },
-  "engines": {
-    "node": "8.11.4"
   }
 }

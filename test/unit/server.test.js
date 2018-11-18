@@ -1,6 +1,7 @@
 import http from 'http';
+import type App from '$/lib/App';
 
-const server = require('$/server');
+const server: App = require('$/app').appServer;
 
 test('server returns 404', (done) => {
   http.get('http://localhost:4008/unknown-route', (res) => {

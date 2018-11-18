@@ -1,14 +1,22 @@
 import { gql } from 'apollo-server-express';
 
-export default gql`
-  type Community {
-    uuid: String
-    name: String
-    tagline: String
-    desc: String
-  }
+export const getTypeDefs = () => {
+  return gql`
+    type User {
+      email: String
+    }
 
-  type Query {
-    findCommunityByName(name: String!): [Community]
-  }
-`;
+    type Community {
+      uuid: String
+      name: String
+      tagline: String
+      desc: String
+      Users: [User]
+    }
+
+    type Query {
+      searchCommunities(name: String!): [Community],
+      findPopularCommunities: [Community],
+    }
+  `;
+};
