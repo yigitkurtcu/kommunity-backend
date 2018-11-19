@@ -10,19 +10,21 @@ import CookieParser from 'cookie-parser';
 import Morgan from 'morgan';
 import Passport from 'passport';
 import type { Sentry } from '@sentry/node';
-import config from '../config';
+import config from '$/config';
 import { getAllFiles } from './helpers';
 import DbClient, { importModels } from './db-client';
 
-import authenticationMiddleware from '../middlewares/auth';
-import gqlTypeDefs from '../graphql/type-defs';
-import gqlResolvers from '../graphql/resolvers';
+import authenticationMiddleware from '$/middlewares/auth';
+import gqlTypeDefs from '$/graphql/type-defs';
+import gqlResolvers from '$/graphql/resolvers';
+
+import LocalPassportStrategy from '$/passport-auth/local-strategy';
+import JwtPassportStrategy from '$/passport-auth/jwt-strategy';
 
 export default class App {
-  passportStrategiesPath: string;
   routesPath: string;
+  server: Server;
   modelsPath: string;
-  appServer: Server;
   config: AppConfig;
   express: express$Application;
   sequelize: Sequelize;
@@ -32,7 +34,6 @@ export default class App {
     this.config = config;
 
     const srcPath = path.join(path.resolve(), 'src');
-    this.passportStrategiesPath = path.join(srcPath, 'passport-strategies');
     this.routesPath = path.join(srcPath, 'routes');
     this.modelsPath = path.join(srcPath, 'models');
 
@@ -43,11 +44,11 @@ export default class App {
   init = (): void => {
     const { port } = this.config.server;
     this.initExpressApp();
-    const appServer: Server = http.createServer(this.express);
-    appServer.listen(port);
+    this.server = http.createServer(this.express);
+    this.server.listen(port);
 
     /* istanbul ignore next */
-    appServer.on('error', (error) => {
+    this.server.on('error', (error) => {
       if (error.syscall !== 'listen') {
         throw error;
       }
@@ -70,11 +71,9 @@ export default class App {
       }
     });
 
-    appServer.on('listening', () => {
+    this.server.on('listening', () => {
       console.log(`EXPRESS 🎢  Server is ready at http://localhost:${port}`);
     });
-
-    this.appServer = appServer;
   };
 
   initExpressApp = (): void => {
@@ -111,11 +110,10 @@ export default class App {
     this.express.use(Express.urlencoded({ extended: false }));
     this.express.use(CookieParser());
     this.express.use(Express.static(path.join(path.resolve(), publicFolderPath)));
-    this.express.use(Passport.initialize());
 
     this.initDbClient();
     this.initModels();
-    this.initPassportStrategies();
+    this.initPassport();
     this.initRoutes();
     this.initGqlServer(this.express);
 
@@ -147,16 +145,10 @@ export default class App {
     this.models = importModels(this.modelsPath, this.sequelize);
   };
 
-  initPassportStrategies = (): void => {
-    const that = this;
-    getAllFiles(this.passportStrategiesPath, [])
-      .filter((file: string) => {
-        return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js');
-      })
-      .forEach((file: string) => {
-        // eslint-disable-next-line
-        Passport.use(require(file)(that));
-      });
+  initPassport = (): void => {
+    this.express.use(Passport.initialize());
+    Passport.use(LocalPassportStrategy(this.models));
+    Passport.use(JwtPassportStrategy());
   };
 
   initRoutes = (): void => {

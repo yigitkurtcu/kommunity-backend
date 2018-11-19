@@ -9,7 +9,6 @@ const routes = (app: App): express$Router => {
   });
 
   app.registerRoute('/', router);
-  return router;
 };
 
 module.exports = routes;

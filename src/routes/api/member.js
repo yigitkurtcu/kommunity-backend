@@ -3,7 +3,7 @@ import express from 'express';
 import md5 from 'md5';
 import authenticationMiddleware from '$/middlewares/auth';
 import type App from '$/lib/app';
-import { generateTokenForUser } from '$/lib/helpers';
+import { generateTokenForUser } from '$/passport-auth/lib';
 
 const routes = (app: App): express$Router => {
   const router: express$Router = express.Router();
@@ -22,7 +22,7 @@ const routes = (app: App): express$Router => {
     }).then((createdUser) => {
       res.json({
         user: createdUser,
-        token: generateTokenForUser(app.config.appServer.secrets.jwt, createdUser),
+        token: generateTokenForUser(createdUser),
       });
     }).catch((err) => {
       res.json({ err });
@@ -33,7 +33,7 @@ const routes = (app: App): express$Router => {
     const { user } = req;
     return res.json({
       user,
-      token: generateTokenForUser(app.config.appServer.secrets.jwt, user),
+      token: generateTokenForUser(user),
     });
   });
 
@@ -43,7 +43,6 @@ const routes = (app: App): express$Router => {
   });
 
   app.registerRoute('/api/v1/member', router);
-  return router;
 };
 
 module.exports = routes;

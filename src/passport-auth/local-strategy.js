@@ -1,18 +1,17 @@
 import lodash from 'lodash';
 import md5 from 'md5';
 import { Strategy as LocalStrategy } from 'passport-local';
-import type App from '$/lib/app';
 
 const Sentry = require('@sentry/node');
 
-const LocalPassportStrategy = (app: App) => {
+const LocalPassportStrategy = (models) => {
   return new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
     session: false,
   }, async (email, password, done) => {
     try {
-      const user = await app.models.User.findOne({
+      const user = await models.User.findOne({
         where: {
           email,
           passwordHash: md5(password),
@@ -32,4 +31,5 @@ const LocalPassportStrategy = (app: App) => {
     return done(null, false);
   });
 };
+
 module.exports = LocalPassportStrategy;
