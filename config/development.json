@@ -1,0 +1,22 @@
+{
+  "server": {
+    "port": 3008,
+    "secrets": {
+      "jwt": "development-jwt-secret"
+    },
+    "morgan": {
+      "format": "dev",
+      "options": {}
+    }
+  },
+  "gqlServer": {
+    "playgroundPath": "/gql-dev"
+  },
+  "db": {
+    "hostname": "localhost",
+    "port": 3306,
+    "database": "community-development",
+    "username": "root",
+    "password": ""
+  }
+}

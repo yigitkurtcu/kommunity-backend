@@ -1,25 +1,27 @@
 import Util from 'util';
 import { get } from 'lodash';
 import Strategy from 'passport-strategy';
-import type App from '$/lib/app';
-import { getUserFromToken } from '$/lib/helpers';
+import { getUserFromToken } from '$/passport-auth/lib';
 
-const JwtStrategy = function JwtStrategy(secret: string) {
+const JwtStrategy = function JwtStrategy() {
   Strategy.call(this);
   this.name = 'jwt';
-  this.secret = secret;
 };
+
 JwtStrategy.prototype.authenticate = function authenticate(req: exExpress$Request) {
   const token = get(req, 'body.token') || req.headers.authorization;
-  return getUserFromToken(this.secret, token, (err, user) => {
+  return getUserFromToken(token, (err, user) => {
     if (err) {
       return this.fail();
     }
     return this.success(user);
   });
 };
+
 Util.inherits(JwtStrategy, Strategy);
-const PassportStrategy = (app: App) => {
-  return new JwtStrategy(app.config.appServer.secrets.jwt);
+
+const JwtPassportStrategy = () => {
+  return new JwtStrategy();
 };
-module.exports = PassportStrategy;
+
+module.exports = JwtPassportStrategy;
