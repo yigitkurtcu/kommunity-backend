@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'uploads',
-  items : [
+  items: [
     {
       uuid: '23e9bfd0-d6a1-11e8-9f8b-f2801f1b9fd1',
       owner_uuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
@@ -129,5 +129,5 @@ module.exports = {
       type: 'post_attachment',
       short_desc: 'Test user post attachment file 05.',
     },
-  ]
+  ],
 };

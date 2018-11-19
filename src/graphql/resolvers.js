@@ -1,6 +1,6 @@
 import type App from '$/lib/app';
 
-export const getResolvers = (app: App) => {
+export default (app: App) => {
   return {
     Query: {
       // returns communities with most members

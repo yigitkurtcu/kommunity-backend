@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'conversation_posts',
-  items : [
+  items: [
     {
       uuid: '1749067c-d78d-11e8-9f8b-f2801f1b9fd1',
       author_uuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
@@ -101,5 +101,5 @@ module.exports = {
       view_count: 5,
       attachment_upload_uuids: '{"uuids" : ["23ea065c-d6a1-11e8-9f8b-f2801f1b9fd1"]}',
     },
-  ]
+  ],
 };

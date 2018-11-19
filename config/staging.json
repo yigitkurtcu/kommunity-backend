@@ -1,0 +1,29 @@
+{
+  "server": {
+    "port": 3008,
+    "secrets": {
+      "jwt": "staging-jwt-secret"
+    },
+    "sentry": {
+      "dsn": "https://3a6da0069d6545d89e80cb157cdca689@sentry.io/1305830",
+      "debug": true,
+      "environment": "staging",
+      "sampleRate": 1.0,
+      "attachStacktrace": true
+    },
+    "morgan": {
+      "format": "dev",
+      "options": {}
+    }
+  },
+  "gqlServer": {
+    "playgroundPath": "/gql-dev"
+  },
+  "db": {
+    "hostname": "localhost",
+    "port": 3306,
+    "database": "community-staging",
+    "username": "root",
+    "password": ""
+  }
+}

@@ -1,12 +1,12 @@
 import uuid from 'uuid';
+import express from 'express';
 import md5 from 'md5';
 import authenticationMiddleware from '$/middlewares/auth';
 import type App from '$/lib/app';
 import { generateTokenForUser } from '$/lib/helpers';
 
 const routes = (app: App): express$Router => {
-  const rootPath: string = '/api/v1/member';
-  const router: express$Router = app.createRouter();
+  const router: express$Router = express.Router();
 
   router.get('/me', authenticationMiddleware, (req: exExpress$Request, res: express$Response) => {
     return res.json(req.user);
@@ -42,7 +42,7 @@ const routes = (app: App): express$Router => {
     res.json({ success: true });
   });
 
-  app.express.use(rootPath, router);
+  app.registerRoute('/api/v1/member', router);
   return router;
 };
 

@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'conversation_categories',
-  items : [
+  items: [
     {
       uuid: '310f93c8-d76a-11e8-9f8b-f2801f1b9fd1',
       community_uuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
@@ -193,5 +193,5 @@ module.exports = {
       visibility: 'secret',
       min_role_required: 'admin',
     },
-  ]
+  ],
 };

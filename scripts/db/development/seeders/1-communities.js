@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'communities',
-  items : [
+  items: [
     {
       uuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
       name: 'Test Community 01',
@@ -73,5 +73,5 @@ module.exports = {
       visibility: 'public',
       is_active: 1,
     },
-  ]
+  ],
 };

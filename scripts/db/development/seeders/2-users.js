@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'users',
-  items : [
+  items: [
     {
       uuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
       email: 'test01@test.com',
@@ -73,5 +73,5 @@ module.exports = {
       last_seen_at: null,
       confirmed_email_at: null,
     },
-  ]
+  ],
 };

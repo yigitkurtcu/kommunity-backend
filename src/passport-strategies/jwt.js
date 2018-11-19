@@ -9,6 +9,7 @@ const JwtStrategy = function JwtStrategy(secret: string) {
   this.name = 'jwt';
   this.secret = secret;
 };
+
 JwtStrategy.prototype.authenticate = function authenticate(req: exExpress$Request) {
   const token = get(req, 'body.token') || req.headers.authorization;
   return getUserFromToken(this.secret, token, (err, user) => {
@@ -18,8 +19,11 @@ JwtStrategy.prototype.authenticate = function authenticate(req: exExpress$Reques
     return this.success(user);
   });
 };
+
 Util.inherits(JwtStrategy, Strategy);
+
 const PassportStrategy = (app: App) => {
-  return new JwtStrategy(app.config.appServer.secrets.jwt);
+  return new JwtStrategy(app.config.server.secrets.jwt);
 };
+
 module.exports = PassportStrategy;

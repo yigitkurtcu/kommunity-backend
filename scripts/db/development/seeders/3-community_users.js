@@ -1,6 +1,6 @@
 module.exports = {
   tableName: 'community_users',
-  items : [
+  items: [
     {
       community_uuid: '6c52dc16-d6a6-11e8-9f8b-f2801f1b9fd1',
       user_uuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
@@ -127,5 +127,5 @@ module.exports = {
       status: 'approved',
       role: 'member',
     },
-  ]
+  ],
 };
