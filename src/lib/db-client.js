@@ -5,6 +5,7 @@ import { getAllFiles } from './helpers';
 export default (sequelizeOptions: SequelizeOptions): Sequelize => {
   return new Sequelize(sequelizeOptions);
 };
+
 export const importModels = (modelsPath: string, dbClient: Sequelize): AppModels => {
   const models: $Shape<AppModels> = {};
   const associates = [];
@@ -18,10 +19,12 @@ export const importModels = (modelsPath: string, dbClient: Sequelize): AppModels
       models[model.name] = model;
       associates.push(model);
     });
+
   associates.forEach((model) => {
     if (model.associate) {
       model.associate(models);
     }
   });
+
   return models;
 };

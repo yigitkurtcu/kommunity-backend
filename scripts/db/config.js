@@ -2,15 +2,19 @@
 require('babel-core/register');
 
 const {
-  dbClient: {
+  db: {
     hostname, dialect, database, username, password,
-  }, env: { current },
+  },
 } = require('../../src/config');
 
-const dbSettings = {
-  host: hostname, dialect, database, username, password,
+const sequelizeCliConfig = {
+  [process.env.NODE_ENV]: {
+    database,
+    dialect,
+    host: hostname,
+    password,
+    username,
+  },
 };
-const sequelizeCliConfig = {};
-sequelizeCliConfig[current] = dbSettings;
 
 module.exports = sequelizeCliConfig;
