@@ -1,5 +1,8 @@
-
 import { type Options as SequelizeOptions } from "sequelize";
+
+declare module 'config' {
+  declare module.exports: any;
+}
 
 declare module '$/../scripts/app/config' {
   declare module.exports: any;
@@ -14,6 +17,7 @@ declare type AppConfigEnv = {
 declare type AppServerSentryConfig = {
   dsn: string,
   debug: boolean,
+  environment: string,
   sampleRate: number,
   attachStacktrace: boolean
 };
@@ -40,9 +44,8 @@ declare type AppGqlServerConfig = {
   playgroundPath: string
 };
 declare type AppConfig = {
-  env:AppConfigEnv,
-  appServer: AppServerConfig,
-  dbClient: SequelizeOptions,
+  server: AppServerConfig,
+  db: SequelizeOptions,
   gqlServer: AppGqlServerConfig
 };
 declare type AppUser = {

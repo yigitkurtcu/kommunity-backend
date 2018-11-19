@@ -5,7 +5,7 @@ import authenticationMiddleware from '$/middlewares/auth';
 import type App from '$/lib/app';
 import { generateTokenForUser } from '$/passport-auth/lib';
 
-const routes = (app: App): express$Router => {
+const routes = (app: App): void => {
   const router: express$Router = express.Router();
 
   router.get('/me', authenticationMiddleware, (req: exExpress$Request, res: express$Response) => {

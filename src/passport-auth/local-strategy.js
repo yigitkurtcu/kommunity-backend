@@ -4,7 +4,7 @@ import { Strategy as LocalStrategy } from 'passport-local';
 
 const Sentry = require('@sentry/node');
 
-const LocalPassportStrategy = (models) => {
+const LocalPassportStrategy = (models: AppModels) => {
   return new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',

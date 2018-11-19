@@ -163,7 +163,7 @@ export default class App {
       });
   };
 
-  initGqlServer = (express): void => {
+  initGqlServer = (express: express$Application): void => {
     const that = this;
     const serverConf = {
       typeDefs: gqlTypeDefs,
@@ -188,7 +188,7 @@ export default class App {
     });
   }
 
-  registerRoute = (route, router): void => {
+  registerRoute = (route: string, router: express$Router): void => {
     this.express.use(route, router);
   }
 }

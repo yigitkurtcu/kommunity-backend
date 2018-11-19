@@ -6,7 +6,7 @@
     "node": "8.11.4"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon src/app.js --exec babel-node",
+    "start": "cross-env NODE_ENV=development nodemon src/server.js --exec babel-node",
     "watch": "cross-env NODE_ENV=development npm start",
     "check-if-not-committed": "node scripts/git/check-if-not-committed.js",
     "check-travis": "cross-env NODE_ENV=test run-s -nl lint flow cover",
