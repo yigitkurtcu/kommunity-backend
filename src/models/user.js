@@ -2,59 +2,86 @@ import Sequelize, { type DataTypes } from 'sequelize';
 
 
 module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
-  const User = sequelize.define('User',
-    {
-      uuid: {
-        type: dataTypes.UUID,
-        primaryKey: true,
-        allowNull: false,
-        field: 'uuid',
-      },
-      email: {
-        type: dataTypes.STRING,
-        allowNull: false,
-        field: 'email',
-      },
-      passwordHash: {
-        type: dataTypes.STRING,
-        allowNull: false,
-        field: 'password_hash',
-      },
-      firstName: {
-        type: dataTypes.STRING,
-        field: 'first_name',
-      },
-      lastName: {
-        type: dataTypes.STRING,
-        field: 'last_name',
-      },
-      userAttributes: {
-        type: dataTypes.TEXT('long'),
-        field: 'user_attributes',
-      },
-      location: {
-        type: dataTypes.STRING,
-        field: 'location',
-      },
-      avatarUploadUuid: {
-        type: dataTypes.UUID,
-        field: 'avatar_upload_uuid',
-      },
-      lastSeenAt: {
-        type: dataTypes.DATE,
-        field: 'last_seen_at',
-      },
-      confirmedEmailAt: {
-        type: dataTypes.DATE,
-        field: 'confirmed_email_at',
+  const User = sequelize.define('User', {
+    uuid: {
+      type: dataTypes.UUID,
+      primaryKey: true,
+      allowNull: false,
+      field: 'uuid',
+      validate: {
+        isUUID: 4,
       },
     },
-    {
-      paranoid: true,
-      underscored: true,
-      freezeTableName: true,
-      tableName: 'users',
-    });
+    email: {
+      type: dataTypes.STRING(254),
+      allowNull: false,
+      field: 'email',
+      validate: {
+        isEmail: true,
+      },
+    },
+    passwordHash: {
+      type: dataTypes.STRING(32),
+      allowNull: false,
+      field: 'password_hash',
+      validate: {
+        len: [32, 32],
+      },
+    },
+    firstName: {
+      type: dataTypes.STRING(50),
+      field: 'first_name',
+      validate: {
+        len: [1, 50],
+      },
+    },
+    lastName: {
+      type: dataTypes.STRING(50),
+      field: 'last_name',
+      validate: {
+        len: [1, 50],
+      },
+    },
+    userAttributes: {
+      type: dataTypes.TEXT('long'),
+      field: 'user_attributes',
+      validate: { },
+    },
+    location: {
+      type: dataTypes.STRING(30),
+      field: 'location',
+      validate: {
+        len: [1, 30],
+      },
+    },
+    avatarUploadUuid: {
+      type: dataTypes.UUID,
+      field: 'avatar_upload_uuid',
+      validate: {
+        isUUID: 4,
+      },
+    },
+    lastSeenAt: {
+      type: dataTypes.DATE,
+      field: 'last_seen_at',
+      validate: {
+        isDate: true,
+      },
+    },
+    confirmedEmailAt: {
+      type: dataTypes.DATE,
+      field: 'confirmed_email_at',
+      validate: {
+        isDate: true,
+      },
+    },
+  },
+  {
+    paranoid: true,
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'users',
+  });
 
   User.associate = (models) => {
     User.belongsToMany(models.Community, { through: models.CommunityUser });
