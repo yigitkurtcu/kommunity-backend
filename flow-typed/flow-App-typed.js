@@ -49,7 +49,7 @@ declare type AppConfig = {
   gqlServer: AppGqlServerConfig
 };
 declare type AppUser = {
-  id: string
+  uuid: string
 };
 
 declare type AppModels = {
@@ -58,7 +58,7 @@ declare type AppModels = {
   CommunityUser: any,
   ConversationCategory: any,
   ConversationPost: any,
-  Upload: any
+  UploadedItem: any
 };
 
 declare class exExpress$Request extends express$Request {

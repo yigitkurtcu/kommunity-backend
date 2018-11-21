@@ -20,6 +20,7 @@ import gqlResolvers from '$/graphql/resolvers';
 
 import LocalPassportStrategy from '$/passport-auth/local-strategy';
 import JwtPassportStrategy from '$/passport-auth/jwt-strategy';
+import { generateTokenForUser } from '$/passport-auth/lib';
 
 export default class App {
   routesPath: string;
@@ -168,14 +169,26 @@ export default class App {
     const serverConf = {
       typeDefs: gqlTypeDefs,
       resolvers: gqlResolvers(this),
+      context: ({ req }) => req.user,
     };
 
     express.use((req: exExpress$Request, res: express$Response, next: express$NextFunction) => {
       if (req.path === that.config.gqlServer.rootPath) {
         return authenticationMiddleware(req, res, next);
       }
+      // fakeToken for only gqlPlayground context.
+      if (process.env.NODE_ENV !== 'production' && req.path === that.config.gqlServer.playgroundPath) {
+        const fakeToken = generateTokenForUser({
+          uuid: '3346776a-d69d-11e8-9f8b-f2801f1b9fd1',
+        });
+        req.headers.authorization = fakeToken;
+        return authenticationMiddleware(req, res, next);
+      }
       return next();
     });
+
+    const server = new ApolloServer(serverConf);
+    server.applyMiddleware({ app: express, path: this.config.gqlServer.rootPath });
 
     if (process.env.NODE_ENV !== 'production') {
       const playgroundServer = new ApolloServer(serverConf);

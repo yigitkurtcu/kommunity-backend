@@ -1,8 +1,21 @@
 import type App from '$/lib/app';
+import uuid from 'uuid';
 
 export default (app: App) => {
   return {
     Query: {
+      getLoggedInUserDetails: (parent: {}, args: {}, user: AppUser) => {
+        return app.models.User.find({
+          include: [{ model: app.models.Community }],
+          where: { uuid: user.uuid },
+        });
+      },
+      getUserDetailsById: (parent: {}, args: { id: uuid }) => {
+        return app.models.User.find({
+          include: [{ model: app.models.Community }],
+          where: { uuid: args.id },
+        });
+      },
       // returns communities with most members
       findPopularCommunities: async () => {
         // executing 2 queries here, can we do it in 1?
@@ -22,8 +35,7 @@ export default (app: App) => {
           },
         });
       },
-
-      searchCommunities: (obj: {}, args: {name: string}) => app.models.Community.findAll({
+      searchCommunities: (parent: {}, args: { name: string }) => app.models.Community.findAll({
         include: [{ model: app.models.User }],
         where: {
           name: {

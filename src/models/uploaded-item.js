@@ -1,7 +1,7 @@
 import Sequelize, { type DataTypes } from 'sequelize';
 
 module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
-  const Upload = sequelize.define('Upload', {
+  const UploadedItem = sequelize.define('UploadedItem', {
     uuid: {
       type: dataTypes.UUID,
       primaryKey: true,
@@ -54,8 +54,8 @@ module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
     paranoid: true,
     underscored: true,
     freezeTableName: true,
-    tableName: 'uploads',
+    tableName: 'uploaded_item',
   });
 
-  return Upload;
+  return UploadedItem;
 };

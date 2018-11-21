@@ -28,6 +28,13 @@ module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
         len: [32, 32],
       },
     },
+    username: {
+      type: dataTypes.STRING(20),
+      field: 'username',
+      validate: {
+        len: [1, 20],
+      },
+    },
     firstName: {
       type: dataTypes.STRING(50),
       field: 'first_name',

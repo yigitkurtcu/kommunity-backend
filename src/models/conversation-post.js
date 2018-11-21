@@ -47,7 +47,7 @@ module.exports = (sequelize: Sequelize, dataTypes: DataTypes) => {
       allowNull: false,
       field: 'content',
       validate: {
-        min: 5,
+        notEmpty: true,
       },
     },
     viewCount: {

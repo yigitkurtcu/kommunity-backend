@@ -131,7 +131,7 @@ const items = [
 
 module.exports = {
   up: (queryInterface) => {
-    return queryInterface.bulkInsert('uploads', items, {});
+    return queryInterface.bulkInsert('uploaded_item', items, {});
   },
   down: () => {},
 };
