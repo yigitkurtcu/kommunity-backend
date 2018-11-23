@@ -44,5 +44,26 @@ export default (app: App) => {
         },
       }),
     },
+    Mutation: {
+      // creates community and returns it
+      createCommunity: (parent: {}, args: {
+        name: string,
+        tagline: string,
+        desc: string,
+        location: string,
+        tier: string,
+        visibility: string,
+      }) => {
+        return app.models.Community.create({ // TODO avatarUploadUuid, socialLinks
+          uuid: uuid(),
+          name: args.name,
+          tagline: args.tagline,
+          desc: args.desc,
+          location: args.location,
+          tier: args.tier,
+          visibility: args.visibility,
+        });
+      },
+    },
   };
 };

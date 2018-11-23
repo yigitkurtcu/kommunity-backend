@@ -60,6 +60,9 @@ export default gql`
     name: String
     tagline: String
     desc: String
+    location: String
+    tier: CommunityTier
+    visibility: CommunityType
     Users: [UserDetails]
   }
 
@@ -68,5 +71,16 @@ export default gql`
     getUserDetailsById(id: ID!): UserDetails
     searchCommunities(name: String!): [Community]
     findPopularCommunities: [Community]
+  }
+
+  type Mutation {
+    createCommunity(
+      name: String, 
+      tagline: String, 
+      desc: String, 
+      location: String, 
+      tier: CommunityTier, 
+      visibility: CommunityType,
+      ) : Community
   }
 `;
