@@ -10,6 +10,7 @@ import CookieParser from 'cookie-parser';
 import Morgan from 'morgan';
 import Passport from 'passport';
 import type { Sentry } from '@sentry/node';
+import helmet from 'helmet';
 import config from '$/config';
 import { getAllFiles } from './helpers';
 import DbClient, { importModels } from './db-client';
@@ -104,8 +105,13 @@ export default class App {
       this.express.use(sentry.Handlers.requestHandler());
     }
 
-    // TODO update cors policy
-    this.express.use(Cors());
+
+    this.express.use(helmet({
+      frameguard: {
+        action: 'deny',
+      },
+    }));
+    this.express.use(Cors()); // TODO update cors policy
     this.express.use(Morgan(morganConfig.format, morganConfig.options));
     this.express.use(Express.json());
     this.express.use(Express.urlencoded({ extended: false }));
